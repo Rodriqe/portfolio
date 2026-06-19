@@ -137,7 +137,7 @@ function renderCertifications() {
         
         badge.innerHTML = `
             <h4>${cert.title}</h4>
-            <p>${cert.code} • ${cert.date}</p>
+            <p>${cert.code}</p>
         `;
         
         certsGrid.appendChild(badge);
