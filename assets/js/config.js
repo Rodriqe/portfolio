@@ -4,13 +4,13 @@
 // ============================================
 
 const portfolioConfig = {
-    // Información personal
+    // Personal information
     personal: {
-        name: "Rodriqe",
+        name: "Rodrigo Quintanilla",
         title: "Azure Solutions Architect",
-        location: "Chile (Remoto)",
+        location: "Chile (Remote)",
         github: "https://github.com/Rodriqe",
-        description: "Especialista en diseño e implementación de plataformas de datos empresariales, Microsoft Fabric y estrategias FinOps."
+        description: "Specialist in the design and implementation of enterprise data platforms, Microsoft Fabric and FinOps strategies."
     },
 
     // Servicios de consultoría
@@ -18,38 +18,38 @@ const portfolioConfig = {
         {
             id: 1,
             icon: "☁️",
-            title: "Arquitectura Cloud",
-            description: "Diseño de soluciones escalables y seguras en Azure. Aplicación de Cloud Adoption Framework (CAF) y Well-Architected Framework (WAF) para garantizar excelencia operacional."
+            title: "Cloud Architecture",
+            description: "Design of scalable and secure solutions on Azure. Applying the Cloud Adoption Framework (CAF) and Well-Architected Framework (WAF) to ensure operational excellence."
         },
         {
             id: 2,
             icon: "📊",
-            title: "Plataformas de Datos",
-            description: "Implementación de Microsoft Fabric, Data Lakes y analytics a escala empresarial. Arquitectura Modern Analytics con integración de Azure Data Factory y Azure Synapse."
+            title: "Data Platforms",
+            description: "Implementation of Microsoft Fabric, Data Lakes and enterprise-scale analytics. Modern Analytics architecture with Azure Data Factory and Azure Synapse integration."
         },
         {
             id: 3,
             icon: "💰",
-            title: "FinOps y Optimización",
-            description: "Estrategias avanzadas para reducir costos de infraestructura hasta 50%. Gobernanza de gastos, dimensionamiento correcto y planificación de reservas."
+            title: "FinOps & Optimization",
+            description: "Advanced strategies to reduce infrastructure costs by up to 50%. Spend governance, right-sizing and reservation planning."
         },
         {
             id: 4,
             icon: "🔐",
-            title: "Seguridad y Cumplimiento",
-            description: "Arquitectura de entornos regulados con controles CAF, redes privadas y clasificación de datos. Cumplimiento con requisitos de soberanía y auditoría."
+            title: "Security & Compliance",
+            description: "Architecture of regulated environments with CAF controls, private networks and data classification. Compliance with sovereignty and audit requirements."
         },
         {
             id: 5,
             icon: "🔄",
-            title: "DevOps e IaC",
-            description: "Pipelines CI/CD con Azure DevOps. Infraestructura como Código con Terraform y ARM Templates. Automatización de despliegues y gestión de versiones."
+            title: "DevOps & IaC",
+            description: "CI/CD pipelines with Azure DevOps. Infrastructure as Code with Terraform and ARM Templates. Deployment automation and release management."
         },
         {
             id: 6,
             icon: "👥",
-            title: "Liderazgo Técnico",
-            description: "Mentoría de equipos de infraestructura. Establecimiento de estándares y mejores prácticas. Transferencia de conocimiento y capacitación técnica."
+            title: "Technical Leadership",
+            description: "Mentoring infrastructure teams. Establishing standards and best practices. Knowledge transfer and technical training."
         }
     ],
 
@@ -64,7 +64,7 @@ const portfolioConfig = {
         {
             id: 2,
             icon: "📊",
-            category: "Datos & Analytics",
+            category: "Data & Analytics",
             items: ["Microsoft Fabric", "Azure Synapse Analytics", "Azure Data Factory", "Data Lake Storage", "Lakehouse", "Modern Data Platform"]
         },
         {
@@ -76,20 +76,20 @@ const portfolioConfig = {
         {
             id: 4,
             icon: "💰",
-            category: "Gobernanza & FinOps",
-            items: ["FinOps", "Optimización de Costos", "Gobernanza Cloud", "Seguridad y Cumplimiento", "Microsoft Purview", "RBAC"]
+            category: "Governance & FinOps",
+            items: ["FinOps", "Cost Optimization", "Cloud Governance", "Security & Compliance", "Microsoft Purview", "RBAC"]
         },
         {
             id: 5,
             icon: "💻",
-            category: "Desarrollo iOS / macOS",
+            category: "iOS / macOS Development",
             items: ["Swift", "SwiftUI", "SwiftData", "CoreImage", "Apple Vision", "StoreKit 2"]
         },
         {
             id: 6,
             icon: "🧭",
-            category: "Metodologías & Liderazgo",
-            items: ["Agile / Scrum", "Scrum Master", "Liderazgo de Equipos", "Arquitectura Empresarial", "Mentoría Técnica"]
+            category: "Methodologies & Leadership",
+            items: ["Agile / Scrum", "Scrum Master", "Team Leadership", "Enterprise Architecture", "Technical Mentoring"]
         }
     ],
 
@@ -98,9 +98,9 @@ const portfolioConfig = {
         {
             id: 1,
             title: "Safeplace",
-            subtitle: "Aplicacion de seguridad para iOS",
-            description: "Aplicacion nativa enfocada en proteccion privada de archivos, fotos y videos con enfoque zero-server y cifrado on-device.",
-            year: "2025 - Presente",
+            subtitle: "Security app for iOS",
+            description: "Native app focused on private protection of files, photos and videos with a zero-server approach and on-device encryption.",
+            year: "2025 - Present",
             platform: "iOS",
             appStoreUrl: "https://apps.apple.com/us/app/safeplace-vault/id6761115917",
             tags: ["SwiftUI", "iOS", "Security"]
@@ -108,9 +108,9 @@ const portfolioConfig = {
         {
             id: 2,
             title: "FlowImage",
-            subtitle: "Conversor de imagenes multiplataforma",
-            description: "Aplicacion nativa para macOS, iPhone y iPad para conversion de imagenes con un codebase unificado en SwiftUI.",
-            year: "2026 - Presente",
+            subtitle: "Cross-platform image converter",
+            description: "Native app for macOS, iPhone and iPad for image conversion with a unified SwiftUI codebase.",
+            year: "2026 - Present",
             platform: "macOS / iOS / iPadOS",
             appStoreUrl: "https://apps.apple.com/us/app/flowimagemac/id6761324168?mt=12",
             tags: ["SwiftUI", "macOS", "ImageIO"]
@@ -118,9 +118,9 @@ const portfolioConfig = {
         {
             id: 3,
             title: "Time2Split",
-            subtitle: "App de division de gastos para iOS",
-            description: "Aplicacion nativa iOS para dividir cuentas y gastos entre grupos con escaneo OCR de recibos (Apple Vision), 30 monedas y liquidacion inteligente de deudas, completamente on-device.",
-            year: "2026 - Presente",
+            subtitle: "Expense splitting app for iOS",
+            description: "Native iOS app to split bills and expenses across groups with OCR receipt scanning (Apple Vision), 30 currencies and smart debt settlement, fully on-device.",
+            year: "2026 - Present",
             platform: "iOS",
             appStoreUrl: "https://apps.apple.com/us/app/time2split/id6761983454",
             tags: ["SwiftUI", "SwiftData", "Vision"]
@@ -133,42 +133,42 @@ const portfolioConfig = {
             id: 1,
             title: "Azure Solutions Architect Expert",
             code: "AZ-305",
-            date: "Julio 2022",
+            date: "July 2022",
             level: "Expert"
         },
         {
             id: 2,
             title: "Azure Fabric Analytics Engineer Associate",
             code: "DP-600",
-            date: "Junio 2024",
+            date: "June 2024",
             level: "Associate"
         },
         {
             id: 3,
             title: "Azure Administrator Associate",
             code: "AZ-104",
-            date: "Mayo 2022",
+            date: "May 2022",
             level: "Associate"
         },
         {
             id: 4,
             title: "Azure Data Fundamentals",
             code: "DP-900",
-            date: "Abril 2022",
+            date: "April 2022",
             level: "Fundamentals"
         },
         {
             id: 5,
             title: "Azure AI Fundamentals",
             code: "AI-900",
-            date: "Abril 2022",
+            date: "April 2022",
             level: "Fundamentals"
         },
         {
             id: 6,
             title: "Scrum Master Professional",
             code: "SMPC",
-            date: "Julio 2020",
+            date: "July 2020",
             level: "Professional"
         }
     ],
@@ -177,19 +177,19 @@ const portfolioConfig = {
     stats: [
         {
             number: "20+",
-            label: "Implementaciones Fabric"
+            label: "Fabric Implementations"
         },
         {
             number: "60+",
-            label: "Clientes Empresariales"
+            label: "Enterprise Clients"
         },
         {
             number: "50%",
-            label: "Reducción de Costos Promedio"
+            label: "Average Cost Reduction"
         },
         {
             number: "4+",
-            label: "Años de Experiencia"
+            label: "Years of Experience"
         }
     ],
 

@@ -193,6 +193,16 @@ nav a:hover::after {
     max-width: 15ch;
 }
 
+.hero-eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 1.25rem;
+}
+
 .hero-content h1 .highlight {
     font-style: italic;
     font-weight: 500;

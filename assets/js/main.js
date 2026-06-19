@@ -97,8 +97,8 @@ function renderProjects() {
         const projectActions = project.appStoreUrl
             ? `
                 <div class="project-actions">
-                    <a class="project-link" href="${project.appStoreUrl}" target="_blank" rel="noopener noreferrer" aria-label="Abrir ${project.title} en App Store">
-                        Ver en App Store
+                    <a class="project-link" href="${project.appStoreUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open ${project.title} on the App Store">
+                        View on the App Store
                     </a>
                 </div>
               `
