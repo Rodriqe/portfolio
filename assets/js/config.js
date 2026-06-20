@@ -10,7 +10,7 @@ const portfolioConfig = {
         title: "Azure Solutions Architect",
         location: "Chile (Remote)",
         github: "https://github.com/Rodriqe",
-        description: "Specialist in the design and implementation of enterprise data platforms, Microsoft Fabric and FinOps strategies."
+        description: "Azure Solutions Architect Expert and iOS developer with six Microsoft certifications, specialized in enterprise data platforms, Microsoft Fabric and FinOps strategies."
     },
 
     // Servicios de consultoría
@@ -102,6 +102,7 @@ const portfolioConfig = {
             description: "Native app focused on private protection of files, photos and videos with a zero-server approach and on-device encryption.",
             year: "2025 - Present",
             platform: "iOS",
+            icon: "assets/img/apps/safeplace.png",
             appStoreUrl: "https://apps.apple.com/us/app/safeplace-vault/id6761115917",
             tags: ["SwiftUI", "iOS", "Security"]
         },
@@ -112,6 +113,7 @@ const portfolioConfig = {
             description: "Native app for macOS, iPhone and iPad for image conversion with a unified SwiftUI codebase.",
             year: "2026 - Present",
             platform: "macOS / iOS / iPadOS",
+            icon: "assets/img/apps/flowimage.png",
             appStoreUrl: "https://apps.apple.com/us/app/flowimagemac/id6761324168?mt=12",
             tags: ["SwiftUI", "macOS", "ImageIO"]
         },
@@ -122,6 +124,7 @@ const portfolioConfig = {
             description: "Native iOS app to split bills and expenses across groups with OCR receipt scanning (Apple Vision), 30 currencies and smart debt settlement, fully on-device.",
             year: "2026 - Present",
             platform: "iOS",
+            icon: "assets/img/apps/time2split.png",
             appStoreUrl: "https://apps.apple.com/us/app/time2split/id6761983454",
             tags: ["SwiftUI", "SwiftData", "Vision"]
         }
@@ -131,6 +134,7 @@ const portfolioConfig = {
     certifications: [
         {
             id: 1,
+            badge: "assets/img/certs/microsoft-expert.svg",
             title: "Azure Solutions Architect Expert",
             code: "AZ-305",
             date: "July 2022",
@@ -138,6 +142,7 @@ const portfolioConfig = {
         },
         {
             id: 2,
+            badge: "assets/img/certs/microsoft-associate.svg",
             title: "Azure Fabric Analytics Engineer Associate",
             code: "DP-600",
             date: "June 2024",
@@ -145,6 +150,7 @@ const portfolioConfig = {
         },
         {
             id: 3,
+            badge: "assets/img/certs/microsoft-associate.svg",
             title: "Azure Administrator Associate",
             code: "AZ-104",
             date: "May 2022",
@@ -152,6 +158,7 @@ const portfolioConfig = {
         },
         {
             id: 4,
+            badge: "assets/img/certs/microsoft-fundamentals.svg",
             title: "Azure Data Fundamentals",
             code: "DP-900",
             date: "April 2022",
@@ -159,6 +166,7 @@ const portfolioConfig = {
         },
         {
             id: 5,
+            badge: "assets/img/certs/microsoft-fundamentals.svg",
             title: "Azure AI Fundamentals",
             code: "AI-900",
             date: "April 2022",
@@ -166,6 +174,15 @@ const portfolioConfig = {
         },
         {
             id: 6,
+            badge: "assets/img/certs/microsoft-fundamentals.svg",
+            title: "Azure Fundamentals",
+            code: "AZ-900",
+            date: "March 2022",
+            level: "Fundamentals"
+        },
+        {
+            id: 7,
+            badge: "assets/img/certs/certiprof-smpc.png",
             title: "Scrum Master Professional",
             code: "SMPC",
             date: "July 2020",
@@ -176,12 +193,12 @@ const portfolioConfig = {
     // Estadísticas clave
     stats: [
         {
-            number: "20+",
-            label: "Fabric Implementations"
+            number: "8",
+            label: "Project Areas · Data · Fabric · Cloud · Migrations · FinOps · DevOps · Security · IaC"
         },
         {
-            number: "60+",
-            label: "Enterprise Clients"
+            number: "4",
+            label: "Client Sectors · Banking · Government · Industry · Retail"
         },
         {
             number: "50%",
@@ -197,7 +214,7 @@ const portfolioConfig = {
     metadata: {
         year: new Date().getFullYear(),
         version: "1.0.0",
-        lastUpdated: "2026-06-18"
+        lastUpdated: "2026-06-19"
     }
 };
 

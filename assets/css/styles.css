@@ -4,20 +4,20 @@
    ============================================ */
 
 :root {
-    --bg: #06060f;
-    --bg-2: #0b0a18;
+    --bg: #0e1626;
+    --bg-2: #16243d;
     --surface: rgba(255, 255, 255, 0.035);
     --surface-2: rgba(255, 255, 255, 0.06);
     --border: rgba(255, 255, 255, 0.10);
-    --border-glow: rgba(124, 92, 255, 0.45);
+    --border-glow: rgba(77, 141, 255, 0.45);
 
-    --text: #f3f2fb;
-    --text-soft: #b6b3d4;
-    --muted: #797795;
+    --text: #eef3fb;
+    --text-soft: #b3c2db;
+    --muted: #7c89a3;
 
-    --violet: #8b6dff;
-    --cyan: #38e8df;
-    --magenta: #ff6ad5;
+    --violet: #4d8dff;
+    --cyan: #43d9e8;
+    --magenta: #7aa2ff;
 
     --maxw: 1160px;
 }
@@ -50,9 +50,9 @@ body::before {
     z-index: 0;
     pointer-events: none;
     background:
-        radial-gradient(800px 500px at 12% -8%, rgba(139, 109, 255, 0.28), transparent 60%),
-        radial-gradient(700px 500px at 92% 4%, rgba(56, 232, 223, 0.16), transparent 58%),
-        radial-gradient(900px 700px at 70% 100%, rgba(255, 106, 213, 0.12), transparent 60%);
+        radial-gradient(800px 500px at 12% -8%, color-mix(in srgb, var(--violet) 45%, transparent), transparent 62%),
+        radial-gradient(700px 500px at 92% 4%, color-mix(in srgb, var(--cyan) 30%, transparent), transparent 60%),
+        radial-gradient(900px 700px at 70% 100%, color-mix(in srgb, var(--magenta) 24%, transparent), transparent 62%);
 }
 
 body::after {
@@ -75,7 +75,7 @@ body::after {
 }
 
 ::selection {
-    background: rgba(139, 109, 255, 0.4);
+    background: color-mix(in srgb, var(--violet) 40%, transparent);
     color: #fff;
 }
 
@@ -110,7 +110,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(6, 6, 15, 0.6);
+    background: color-mix(in srgb, var(--bg) 72%, transparent);
     -webkit-backdrop-filter: blur(16px) saturate(140%);
     backdrop-filter: blur(16px) saturate(140%);
     border-bottom: 1px solid var(--border);
@@ -120,7 +120,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
     padding: 1.25rem 0;
 }
 
@@ -135,6 +136,7 @@ nav {
 
 nav ul {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     gap: 2.25rem;
 }
@@ -185,12 +187,12 @@ nav a:hover::after {
 
 .hero-content h1 {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(3rem, 8.5vw, 6.5rem);
-    line-height: 1;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.04;
     margin-bottom: 1.75rem;
     font-weight: 600;
     letter-spacing: -0.01em;
-    max-width: 15ch;
+    white-space: nowrap;
 }
 
 .hero-eyebrow {
@@ -246,12 +248,12 @@ nav a:hover::after {
     background: linear-gradient(110deg, var(--violet), var(--cyan));
     color: #0a0a16;
     font-weight: 700;
-    box-shadow: 0 10px 40px rgba(139, 109, 255, 0.35);
+    box-shadow: 0 10px 40px color-mix(in srgb, var(--violet) 35%, transparent);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 50px rgba(56, 232, 223, 0.4);
+    box-shadow: 0 14px 50px color-mix(in srgb, var(--cyan) 40%, transparent);
 }
 
 .btn-secondary {
@@ -270,7 +272,7 @@ nav a:hover::after {
 
 .stats {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 220px));
+    grid-template-columns: repeat(3, minmax(0, 260px));
     gap: 2.5rem;
 }
 
@@ -300,9 +302,30 @@ nav a:hover::after {
 }
 
 .stat-label {
-    font-size: 0.82rem;
-    color: var(--muted);
-    letter-spacing: 0.02em;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--cyan);
+    margin-bottom: 0.75rem;
+}
+
+.stat-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.stat-chips span {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-soft);
+    padding: 0.25rem 0.6rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    line-height: 1.4;
+    white-space: nowrap;
 }
 
 /* ============================================
@@ -361,7 +384,7 @@ nav a:hover::after {
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(140deg, rgba(139, 109, 255, 0.5), transparent 40%, transparent 60%, rgba(56, 232, 223, 0.4));
+    background: linear-gradient(140deg, color-mix(in srgb, var(--violet) 50%, transparent), transparent 40%, transparent 60%, color-mix(in srgb, var(--cyan) 40%, transparent));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
@@ -452,20 +475,20 @@ nav a:hover::after {
 }
 
 .tech-pill {
-    background: rgba(139, 109, 255, 0.1);
-    color: #d9d2ff;
+    background: color-mix(in srgb, var(--violet) 10%, transparent);
+    color: var(--text-soft);
     padding: 0.4rem 0.85rem;
     border-radius: 999px;
     font-size: 0.8rem;
     font-weight: 500;
-    border: 1px solid rgba(139, 109, 255, 0.25);
+    border: 1px solid color-mix(in srgb, var(--violet) 25%, transparent);
     transition: all 0.25s ease;
 }
 
 .tech-pill:hover {
-    background: rgba(56, 232, 223, 0.14);
-    border-color: rgba(56, 232, 223, 0.4);
-    color: #c8fff9;
+    background: color-mix(in srgb, var(--cyan) 14%, transparent);
+    border-color: color-mix(in srgb, var(--cyan) 40%, transparent);
+    color: var(--text);
 }
 
 /* ============================================
@@ -501,7 +524,7 @@ nav a:hover::after {
     right: -30%;
     width: 320px;
     height: 320px;
-    background: radial-gradient(circle, rgba(139, 109, 255, 0.18), transparent 65%);
+    background: radial-gradient(circle, color-mix(in srgb, var(--violet) 18%, transparent), transparent 65%);
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
@@ -519,15 +542,28 @@ nav a:hover::after {
 .project-header {
     position: relative;
     z-index: 1;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.project-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 13px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--violet) 22%, transparent);
 }
 
 .project-header h3 {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 2.2rem;
     font-weight: 700;
-    line-height: 1;
-    margin-bottom: 0.4rem;
+    line-height: 1.05;
+    margin-bottom: 0;
 }
 
 .project-header p {
@@ -536,17 +572,26 @@ nav a:hover::after {
 }
 
 .project-meta {
+    position: relative;
+    z-index: 1;
     font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--cyan);
-    margin-top: 0.85rem;
+    margin-bottom: 1.25rem;
     font-weight: 600;
 }
 
 .project-body {
     position: relative;
     z-index: 1;
+}
+
+.project-subtitle {
+    color: var(--text);
+    font-size: 1.02rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
 }
 
 .project-body p {
@@ -598,7 +643,7 @@ nav a:hover::after {
 
 .project-link:hover {
     border-color: var(--cyan);
-    background: rgba(56, 232, 223, 0.1);
+    background: color-mix(in srgb, var(--cyan) 10%, transparent);
     color: var(--cyan);
 }
 
@@ -607,49 +652,65 @@ nav a:hover::after {
 }
 
 /* ============================================
-   CERTIFICATIONS SECTION
+   HERO CERTIFICATIONS (badges)
    ============================================ */
 
-.certifications {
-    padding: 6rem 0;
+.hero-certs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2.75rem;
 }
 
-.certs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.25rem;
-}
-
-.cert-badge {
+.cert-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.55rem 1rem;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 1.1rem;
-    padding: 1.85rem;
-    text-align: center;
+    border-radius: 999px;
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
-    transition: all 0.32s ease;
+    transition: all 0.3s ease;
 }
 
-.cert-badge:hover {
-    transform: translateY(-4px) scale(1.02);
+.cert-chip:hover {
+    transform: translateY(-2px);
     border-color: var(--border-glow);
     background: var(--surface-2);
 }
 
-.cert-badge h4 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    color: var(--text);
-    margin-bottom: 0.55rem;
+.cert-chip-icon {
     font-size: 1.3rem;
-    font-weight: 700;
-    line-height: 1.15;
+    line-height: 1;
 }
 
-.cert-badge p {
+.cert-chip-badge {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+}
+
+.cert-chip-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.cert-chip-text strong {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.02em;
+}
+
+.cert-chip-text small {
+    font-size: 0.68rem;
     color: var(--muted);
-    font-size: 0.8rem;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.01em;
 }
 
 /* ============================================
@@ -755,18 +816,27 @@ footer {
    RESPONSIVE DESIGN
    ============================================ */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    nav {
+        justify-content: center;
+        text-align: center;
+    }
+
     nav ul {
+        justify-content: center;
         gap: 1.25rem;
         font-size: 0.85rem;
     }
+}
 
+@media (max-width: 768px) {
     .hero {
         padding: 5rem 0 4rem;
     }
 
     .hero-content h1 {
         max-width: none;
+        white-space: normal;
     }
 
     .cta-buttons {
@@ -780,14 +850,18 @@ footer {
 
     .services-grid,
     .tech-grid,
-    .projects-grid,
-    .certs-grid {
+    .projects-grid {
         grid-template-columns: 1fr;
     }
 
     .stats {
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
+    }
+
+    .cert-chip-badge {
+        width: 52px;
+        height: 52px;
     }
 }
 
@@ -801,7 +875,7 @@ footer {
     }
 
     nav ul {
-        gap: 0.85rem;
+        gap: 0.85rem 1.1rem;
         font-size: 0.78rem;
     }
 
@@ -812,5 +886,38 @@ footer {
     .project-card,
     .service-card {
         padding: 1.85rem;
+    }
+
+    .hero-certs {
+        gap: 0.6rem;
+    }
+
+    .cert-chip {
+        padding: 0.45rem 0.8rem;
+        gap: 0.5rem;
+    }
+
+    .cert-chip-badge {
+        width: 44px;
+        height: 44px;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    nav ul {
+        gap: 0.6rem 0.8rem;
+        font-size: 0.72rem;
+    }
+
+    .cert-chip-text strong {
+        font-size: 0.76rem;
     }
 }

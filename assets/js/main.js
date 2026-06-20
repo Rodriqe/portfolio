@@ -103,14 +103,19 @@ function renderProjects() {
                 </div>
               `
             : '';
+
+        const projectIcon = project.icon
+            ? `<img class="project-icon" src="${project.icon}" alt="${project.title} app icon" loading="lazy" width="56" height="56">`
+            : '';
         
         card.innerHTML = `
             <div class="project-header">
+                ${projectIcon}
                 <h3>${project.title}</h3>
-                <p>${project.subtitle}</p>
-                ${projectMeta}
             </div>
+            ${projectMeta}
             <div class="project-body">
+                <p class="project-subtitle">${project.subtitle}</p>
                 <p>${project.description}</p>
                 <div class="project-tags">
                     ${tagsHTML}
@@ -124,23 +129,34 @@ function renderProjects() {
 }
 
 // ============================================
-// RENDERIZACIÓN DE CERTIFICACIONES
+// RENDERIZACIÓN DE CERTIFICACIONES (badges del hero)
 // ============================================
 
 function renderCertifications() {
-    const certsGrid = document.getElementById('certsGrid');
-    
-    portfolioConfig.certifications.forEach((cert, index) => {
-        const badge = document.createElement('div');
-        badge.className = 'cert-badge fade-in';
-        badge.style.animationDelay = `${index * 0.1}s`;
-        
-        badge.innerHTML = `
-            <h4>${cert.title}</h4>
-            <p>${cert.code}</p>
+    const heroCerts = document.getElementById('heroCerts');
+
+    if (!heroCerts || !portfolioConfig.certifications) {
+        return;
+    }
+
+    portfolioConfig.certifications.forEach((cert) => {
+        const chip = document.createElement('div');
+        chip.className = 'cert-chip';
+        chip.title = cert.code ? `${cert.title} · ${cert.code}` : cert.title;
+
+        const badgeHTML = cert.badge
+            ? `<img class="cert-chip-badge" src="${cert.badge}" alt="${cert.title} badge" loading="lazy" width="64" height="64">`
+            : `<span class="cert-chip-icon" aria-hidden="true">${cert.icon || '🏅'}</span>`;
+
+        chip.innerHTML = `
+            ${badgeHTML}
+            <span class="cert-chip-text">
+                <strong>${cert.title}</strong>
+                <small>${cert.code || cert.level || ''}</small>
+            </span>
         `;
-        
-        certsGrid.appendChild(badge);
+
+        heroCerts.appendChild(chip);
     });
 }
 

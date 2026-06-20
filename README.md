@@ -9,7 +9,7 @@ Sitio web profesional de un **Azure Solutions Architect & iOS Developer**.
 
 ## Perfil
 
-Arquitecto de Soluciones Cloud certificado en **Azure** con más de 4 años de experiencia diseñando e implementando plataformas de datos de nivel empresarial para sectores de banca, gobierno e industria. Más de **20 implementaciones end-to-end de Microsoft Fabric** y reducción de costos de infraestructura hasta en un **50%** mediante estrategias de FinOps, sirviendo a más de **60 organizaciones**.
+Arquitecto de Soluciones Cloud certificado en **Azure** con más de 5 años de experiencia diseñando e implementando plataformas de datos de nivel empresarial para sectores de banca, gobierno e industria. Más de **20 implementaciones end-to-end de Microsoft Fabric** y reducción de costos de infraestructura hasta en un **50%** mediante estrategias de FinOps, sirviendo a más de **60 organizaciones**.
 
 Cuento con tres certificaciones de nivel experto de Microsoft Azure, incluyendo **Azure Solutions Architect Expert**. Además, soy desarrollador iOS/macOS con aplicaciones nativas publicadas en la App Store.
 
