@@ -192,7 +192,7 @@ nav a:hover::after {
     margin-bottom: 1.75rem;
     font-weight: 600;
     letter-spacing: -0.01em;
-    white-space: nowrap;
+    text-wrap: balance;
 }
 
 .hero-eyebrow {
@@ -254,6 +254,10 @@ nav a:hover::after {
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 14px 50px color-mix(in srgb, var(--cyan) 40%, transparent);
+}
+
+.btn:active {
+    transform: translateY(0) scale(0.97);
 }
 
 .btn-secondary {
@@ -364,6 +368,41 @@ nav a:hover::after {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
+}
+
+/* Asymmetric bento on wide screens — breaks the generic 3-column grid */
+@media (min-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .service-card {
+        grid-column: span 3;
+    }
+
+    .service-card:nth-child(1) {
+        grid-column: span 4;
+    }
+
+    .service-card:nth-child(2) {
+        grid-column: span 2;
+    }
+
+    .service-card:nth-child(3) {
+        grid-column: span 2;
+    }
+
+    .service-card:nth-child(4) {
+        grid-column: span 4;
+    }
+
+    .service-card:nth-child(5) {
+        grid-column: span 3;
+    }
+
+    .service-card:nth-child(6) {
+        grid-column: span 3;
+    }
 }
 
 .service-card {
@@ -507,6 +546,8 @@ nav a:hover::after {
 
 .project-card {
     position: relative;
+    display: flex;
+    flex-direction: column;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 1.5rem;
@@ -585,6 +626,9 @@ nav a:hover::after {
 .project-body {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .project-subtitle {
@@ -618,7 +662,8 @@ nav a:hover::after {
 }
 
 .project-actions {
-    margin-top: 0.5rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
 }
 
 .project-link {
@@ -787,17 +832,20 @@ footer {
 
 .fade-in {
     opacity: 0;
-    animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    will-change: transform, opacity, filter;
 }
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(28px);
+        transform: translateY(36px);
+        filter: blur(8px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
+        filter: blur(0);
     }
 }
 
@@ -919,5 +967,62 @@ footer {
 
     .cert-chip-text strong {
         font-size: 0.76rem;
+    }
+}
+
+/* ============================================
+   PREMIUM UPGRADES (taste-skill: redesign + soft)
+   ============================================ */
+
+/* Eyebrow tags above section titles — agency-tier spatial rhythm */
+.section-eyebrow {
+    display: block;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 0.9rem;
+}
+
+/* Inner edge highlight on glass surfaces — simulates refracted light */
+.service-card,
+.tech-card,
+.project-card,
+.cert-chip {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.service-card:hover,
+.project-card:hover {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        0 18px 50px color-mix(in srgb, var(--violet) 22%, transparent);
+}
+
+/* Pressed/active feedback — physical click response */
+.project-link:active,
+.social-link:active,
+.cert-chip:active {
+    transform: translateY(0) scale(0.97);
+}
+
+/* Active navigation indicator (scrollspy) */
+nav a.active {
+    color: var(--text);
+}
+
+nav a.active::after {
+    width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-card,
+    .tech-card,
+    .project-card,
+    .cert-chip,
+    .btn {
+        transition: none;
     }
 }

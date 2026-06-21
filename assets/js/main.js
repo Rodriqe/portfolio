@@ -202,6 +202,38 @@ function initializeEvents() {
 
     // Tracking de analytics (opcional)
     trackPageView();
+
+    // Resaltar el link de navegación de la sección visible
+    initializeScrollSpy();
+}
+
+// ============================================
+// SCROLLSPY — link de navegación activo
+// ============================================
+
+function initializeScrollSpy() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    if (!sections.length || !navLinks.length) {
+        return;
+    }
+
+    const setActive = (id) => {
+        navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setActive(entry.target.id);
+            }
+        });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+    sections.forEach(section => observer.observe(section));
 }
 
 // ============================================
