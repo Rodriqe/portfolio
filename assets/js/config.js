@@ -134,7 +134,7 @@ const portfolioConfig = {
     certifications: [
         {
             id: 1,
-            badge: "assets/img/certs/microsoft-expert.svg",
+            badge: "assets/img/certs/az-305.png",
             title: "Azure Solutions Architect Expert",
             code: "AZ-305",
             date: "July 2022",
@@ -150,7 +150,7 @@ const portfolioConfig = {
         },
         {
             id: 3,
-            badge: "assets/img/certs/microsoft-associate.svg",
+            badge: "assets/img/certs/az-104.png",
             title: "Azure Administrator Associate",
             code: "AZ-104",
             date: "May 2022",
@@ -158,7 +158,7 @@ const portfolioConfig = {
         },
         {
             id: 4,
-            badge: "assets/img/certs/microsoft-fundamentals.svg",
+            badge: "assets/img/certs/dp-900.png",
             title: "Azure Data Fundamentals",
             code: "DP-900",
             date: "April 2022",
@@ -166,7 +166,7 @@ const portfolioConfig = {
         },
         {
             id: 5,
-            badge: "assets/img/certs/microsoft-fundamentals.svg",
+            badge: "assets/img/certs/ai-900.png",
             title: "Azure AI Fundamentals",
             code: "AI-900",
             date: "April 2022",
@@ -174,7 +174,7 @@ const portfolioConfig = {
         },
         {
             id: 6,
-            badge: "assets/img/certs/microsoft-fundamentals.svg",
+            badge: "assets/img/certs/az-900.png",
             title: "Azure Fundamentals",
             code: "AZ-900",
             date: "March 2022",
@@ -182,10 +182,26 @@ const portfolioConfig = {
         },
         {
             id: 7,
-            badge: "assets/img/certs/certiprof-smpc.png",
+            badge: "assets/img/certs/sc-900.png",
+            title: "Security, Compliance and Identity Fundamentals",
+            code: "SC-900",
+            date: "",
+            level: "Fundamentals"
+        },
+        {
+            id: 8,
+            badge: "assets/img/certs/smpc.png",
             title: "Scrum Master Professional",
             code: "SMPC",
             date: "July 2020",
+            level: "Professional"
+        },
+        {
+            id: 9,
+            badge: "assets/img/certs/spopc.png",
+            title: "Scrum Product Owner Professional",
+            code: "SPOPC",
+            date: "",
             level: "Professional"
         }
     ],
