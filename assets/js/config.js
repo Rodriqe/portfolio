@@ -8,7 +8,7 @@ const portfolioConfig = {
     personal: {
         name: "Rodrigo Quintanilla",
         title: "Azure Solutions Architect",
-        location: "Chile (Remote)",
+        location: "Remote · Worldwide",
         github: "https://github.com/Rodriqe",
         description: "Azure Solutions Architect Expert and iOS developer with six Microsoft certifications, specialized in enterprise data platforms, Microsoft Fabric and FinOps strategies."
     },
