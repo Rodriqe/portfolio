@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rodriqe.github.io/portfolio/sitemap.xml

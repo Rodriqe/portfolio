@@ -71,6 +71,22 @@ Aplicación nativa iOS para dividir cuentas y gastos entre grupos de forma intel
 
 ## Tecnología del sitio
 
-- HTML5, CSS3 y JavaScript (sin dependencias)
+- HTML5, CSS3 y JavaScript (sin dependencias ni requests externos: fuentes auto-hospedadas en `docs/assets/fonts/`)
 - Diseño responsive y accesible (WCAG 2.2)
-- Desplegado con GitHub Pages
+- Desplegado con GitHub Pages desde **`docs/`** (rama `main`) → https://rodriqe.github.io/portfolio/ (URL canónica)
+- `README.md` y `skills/` quedan fuera del sitio publicado
+
+### Estructura
+
+```
+docs/                 # sitio publicado
+  index.html
+  robots.txt · sitemap.xml
+  assets/css/         # styles.css + fonts.css
+  assets/fonts/       # woff2 (Cormorant Garamond, Manrope; subset latin)
+  assets/img/         # og-preview.jpg, favicon.svg, apple-touch-icon.png, certs/, apps/
+  assets/js/          # config.js (única fuente de contenido) + main.js
+skills/               # skills de diseño usadas para el rediseño (no se publican)
+```
+
+Todo el contenido (servicios, stack, proyectos, certificaciones) se edita en `docs/assets/js/config.js`.

@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     renderTechStack();
     renderProjects();
     renderCertifications();
+    renderCertCount();
     
     // Inicializar animaciones
     initializeAnimations();
@@ -160,6 +161,15 @@ function renderCertifications() {
     });
 }
 
+// El texto del hero ("seven Microsoft certifications") se deriva de config.js para no desincronizarse
+function renderCertCount() {
+    const el = document.getElementById('certCount');
+    if (!el || !portfolioConfig.certifications) return;
+    const microsoft = portfolioConfig.certifications.filter(c => /^(AZ|DP|AI|SC|PL|MS|MB)-\d{3}$/.test(c.code || '')).length;
+    const words = ['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve'];
+    el.textContent = words[microsoft] || String(microsoft);
+}
+
 // ============================================
 // ANIMACIONES SCROLL
 // ============================================
@@ -200,9 +210,6 @@ function initializeEvents() {
         });
     });
 
-    // Tracking de analytics (opcional)
-    trackPageView();
-
     // Resaltar el link de navegación de la sección visible
     initializeScrollSpy();
 }
@@ -236,109 +243,3 @@ function initializeScrollSpy() {
     sections.forEach(section => observer.observe(section));
 }
 
-// ============================================
-// UTILIDADES
-// ============================================
-
-/**
- * Registra la vista de página para analytics
- */
-function trackPageView() {
-    // Aquí puedes integrar con Google Analytics, Mixpanel, etc.
-    console.log('Portfolio page loaded', {
-        timestamp: new Date().toISOString(),
-        url: window.location.href
-    });
-}
-
-/**
- * Obtiene información personal
- */
-function getPersonalInfo() {
-    return portfolioConfig.personal;
-}
-
-/**
- * Valida formulario de contacto (si se agrega)
- */
-function validateContactForm(formData) {
-    const requiredFields = ['name', 'email', 'message'];
-    return requiredFields.every(field => formData[field] && formData[field].trim() !== '');
-}
-
-/**
- * Copia texto al portapapeles
- */
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        showNotification('¡Copiado al portapapeles!');
-    }).catch(err => {
-        console.error('Error al copiar:', err);
-    });
-}
-
-/**
- * Muestra notificación temporal
- */
-function showNotification(message, duration = 3000) {
-    const notification = document.createElement('div');
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: #10b981;
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 0.5rem;
-        z-index: 9999;
-        animation: slideIn 0.3s ease;
-    `;
-    notification.textContent = message;
-    document.body.appendChild(notification);
-
-    setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => notification.remove(), 300);
-    }, duration);
-}
-
-// ============================================
-// ESTILOS DINÁMICOS PARA NOTIFICACIONES
-// ============================================
-
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideIn {
-        from {
-            transform: translateX(400px);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes slideOut {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(400px);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// ============================================
-// EXPORTAR FUNCIONES GLOBALES
-// ============================================
-
-window.portfolioUtils = {
-    getPersonalInfo,
-    validateContactForm,
-    copyToClipboard,
-    showNotification
-};
