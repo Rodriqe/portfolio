@@ -91,8 +91,11 @@
     <main>
         <!-- Hero: editorial split -->
         <section class="hero">
+            <div class="orb orb--a" aria-hidden="true"></div>
+            <div class="orb orb--b" aria-hidden="true"></div>
             <div class="container hero-grid">
                 <div class="hero-copy">
+                    <ul class="focus-chips" id="focusChips" aria-label="Focus areas"></ul>
                     <p class="eyebrow" data-i18n="hero.eyebrow">Azure Solutions Architect Expert · Santiago, Chile</p>
                     <h1>
                         <span data-i18n="hero.h1.a">I help organizations</span><br>
@@ -121,6 +124,11 @@
                 </aside>
             </div>
         </section>
+
+        <!-- Stack marquee -->
+        <div class="marquee" aria-label="Technology stack">
+            <div class="marquee-track" id="marqueeTrack"></div>
+        </div>
 
         <!-- Services: bento -->
         <section class="section" id="services">

@@ -79,6 +79,17 @@ const portfolioConfig = {
         { value: "3", key: "proof.apps" }
     ],
 
+    // Chips sobre el H1 (3–4 máximo)
+    focus: [
+        { en: "Microsoft Fabric", es: "Microsoft Fabric" },
+        { en: "Azure architecture", es: "Arquitectura Azure" },
+        { en: "FinOps", es: "FinOps" },
+        { en: "Read-only assessments", es: "Assessments de solo lectura" }
+    ],
+
+    // Cinta de tecnologías bajo el hero (se repite en bucle)
+    stack: ["Microsoft Azure", "Microsoft Fabric", "Power BI", "OneLake", "Azure Data Factory", "Synapse", "Terraform", "Bicep", "Azure DevOps", "GitHub Actions", "Microsoft Purview", "Entra ID", "FinOps", "Swift", "SwiftUI"],
+
     // Servicios: nombre · descripción · quick wins (lo que el cliente obtiene en las primeras semanas)
     services: [
         {

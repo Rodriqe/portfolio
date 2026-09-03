@@ -11,7 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
     applyLanguage(currentLang);
     initNav();
     initReveal();
+    initSpotlight();
 });
+
+// Luz que sigue al cursor en las tarjetas (.bezel) — solo con puntero fino
+function initSpotlight() {
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+    document.addEventListener('pointermove', e => {
+        const card = e.target.closest?.('.bezel');
+        if (!card) return;
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+        card.style.setProperty('--my', `${e.clientY - r.top}px`);
+    }, { passive: true });
+}
 
 // ---------- i18n ----------
 
@@ -44,6 +57,8 @@ function applyLanguage(lang) {
     });
 
     renderProof();
+    renderFocus();
+    renderMarquee();
     renderServices();
     renderApproach();
     renderGuarantees();
@@ -78,6 +93,20 @@ function renderProof() {
     if (!wrap) return;
     wrap.innerHTML = portfolioConfig.proof.map(p => `
         <li><span class="proof-value">${p.value}</span><span class="proof-label">${str(p.key)}</span></li>`).join('');
+}
+
+function renderFocus() {
+    const wrap = document.getElementById('focusChips');
+    if (!wrap || !portfolioConfig.focus) return;
+    wrap.innerHTML = portfolioConfig.focus.map((f, i) => `<li style="--i:${i}">${t(f)}</li>`).join('');
+}
+
+// Dos copias de la lista para que el bucle sea continuo
+function renderMarquee() {
+    const track = document.getElementById('marqueeTrack');
+    if (!track || !portfolioConfig.stack) return;
+    const items = portfolioConfig.stack.map(s => `<span>${s}</span>`).join('<i aria-hidden="true"></i>');
+    track.innerHTML = `<div class="marquee-group">${items}<i aria-hidden="true"></i></div><div class="marquee-group" aria-hidden="true">${items}<i></i></div>`;
 }
 
 function renderServices() {
