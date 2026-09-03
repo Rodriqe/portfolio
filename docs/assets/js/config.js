@@ -1,192 +1,238 @@
 // ============================================
-// PORTFOLIO CONFIGURATION — única fuente de contenido (EN/ES)
-// Cualquier texto visible es { en: "...", es: "..." }; main.js elige el idioma.
+// PORTFOLIO CONTENT — única fuente (EN/ES)
+// Todo texto visible es { en, es }. main.js resuelve el idioma.
+// Enfoque: vender servicios de consultoría, no describir tareas.
 // ============================================
 
 const portfolioConfig = {
     languages: ["en", "es"],
     defaultLanguage: "en",
 
-    personal: {
-        name: "Rodrigo Quintanilla",
-        title: { en: "Azure Solutions Architect", es: "Arquitecto de Soluciones Azure" },
-        location: { en: "Santiago, Chile · Remote", es: "Santiago, Chile · Remoto" },
+    links: {
+        linkedin: "https://www.linkedin.com/in/rigoqe/",
         github: "https://github.com/Rodriqe",
-        linkedin: "https://www.linkedin.com/in/rigoqe/"
+        // CTA de cada paquete. Hoy LinkedIn; con dominio propio pasa a ser mailto:/formulario/Calendly.
+        order: "https://www.linkedin.com/in/rigoqe/"
     },
 
-    // Textos de la interfaz estática (index.html usa data-i18n="clave")
+    // Moneda y cómo mostrar precios. price: null => "a solicitud". Ej.: price: { from: 2500 }
+    pricing: { currency: "USD", show: true },
+
     strings: {
-        "meta.title": { en: "Rodrigo Quintanilla | Azure Solutions Architect & iOS Developer", es: "Rodrigo Quintanilla | Arquitecto de Soluciones Azure y desarrollador iOS" },
+        "meta.title": { en: "Rodrigo Quintanilla — Packaged Azure & Microsoft Fabric consulting", es: "Rodrigo Quintanilla — Consultoría empaquetada en Azure y Microsoft Fabric" },
         "meta.description": {
-            en: "Rodrigo Quintanilla — Azure Solutions Architect Expert. Enterprise data platforms, Microsoft Fabric migrations, FinOps and cloud governance for banking, retail, insurance and industry.",
-            es: "Rodrigo Quintanilla — Azure Solutions Architect Expert. Plataformas de datos empresariales, migraciones a Microsoft Fabric, FinOps y gobierno cloud para banca, retail, seguros e industria."
+            en: "Fixed-scope, fixed-duration consulting packages for Azure and Microsoft Fabric: quick scans, current-state assessments, Fabric migrations, capacity & FinOps reviews and fractional architecture. Read-only, evidence-based.",
+            es: "Paquetes de consultoría de alcance y duración fijos para Azure y Microsoft Fabric: quick scans, assessments de estado actual, migraciones a Fabric, revisiones de capacidad y FinOps y arquitectura fraccional. Solo lectura, basados en evidencia."
         },
-        "skip": { en: "Skip to main content", es: "Saltar al contenido principal" },
-        "nav.work": { en: "Work", es: "Casos" },
-        "nav.services": { en: "Services", es: "Servicios" },
-        "nav.tech": { en: "Technologies", es: "Tecnologías" },
-        "nav.projects": { en: "Projects", es: "Proyectos" },
+        "skip": { en: "Skip to content", es: "Saltar al contenido" },
+        "nav.services": { en: "Packages", es: "Paquetes" },
+        "nav.approach": { en: "How it works", es: "Cómo funciona" },
+        "nav.credentials": { en: "Credentials", es: "Credenciales" },
         "nav.contact": { en: "Contact", es: "Contacto" },
+        "nav.cta": { en: "Book a call", es: "Agendar llamada" },
         "lang.switch": { en: "Cambiar a español", es: "Switch to English" },
 
-        "hero.eyebrow": { en: "Rodrigo Quintanilla", es: "Rodrigo Quintanilla" },
-        "hero.h1.highlight": { en: "Azure Cloud", es: "Azure Cloud" },
-        "hero.h1.rest": { en: "Solutions Architect", es: "Solutions Architect" },
-        "hero.description": {
-            en: "I design and run enterprise data platforms on Microsoft Azure and Fabric — migrations, capacity sizing, access governance and FinOps — for banking, retail, insurance and industry. Azure Solutions Architect Expert with {{certs}} Microsoft certifications and three apps live on the App Store.",
-            es: "Diseño y opero plataformas de datos empresariales sobre Microsoft Azure y Fabric — migraciones, dimensionamiento de capacidad, gobierno de accesos y FinOps — para banca, retail, seguros e industria. Azure Solutions Architect Expert con {{certs}} certificaciones Microsoft y tres apps publicadas en el App Store."
+        "hero.eyebrow": { en: "Azure Solutions Architect Expert · Microsoft Fabric", es: "Azure Solutions Architect Expert · Microsoft Fabric" },
+        "hero.h1.a": { en: "Consulting you can buy", es: "Consultoría que se compra" },
+        "hero.h1.b": { en: "like a product:", es: "como un producto:" },
+        "hero.h1.c": { en: "fixed scope, fixed time, real evidence.", es: "alcance fijo, tiempo fijo, evidencia real." },
+        "hero.lead": {
+            en: "Packaged assessments, migrations and capacity reviews for Azure and Microsoft Fabric. You know what you get, when you get it and what it costs — before we start. Every package is read-only by default and ends with a decision your leadership can act on.",
+            es: "Assessments, migraciones y revisiones de capacidad empaquetados para Azure y Microsoft Fabric. Sabes qué recibes, cuándo y cuánto cuesta — antes de empezar. Cada paquete es de solo lectura por defecto y termina con una decisión sobre la que dirección puede actuar."
         },
-        "hero.cta.primary": { en: "Request a Consultation", es: "Solicitar una consultoría" },
-        "hero.cta.secondary": { en: "LinkedIn", es: "LinkedIn" },
-        "hero.certs.more": { en: "Show all {{n}} certifications", es: "Ver las {{n}} certificaciones" },
-        "hero.certs.less": { en: "Show fewer", es: "Ver menos" },
-        "stats.areas": { en: "Project Areas", es: "Áreas de proyecto" },
-        "stats.sectors": { en: "Client Sectors", es: "Sectores de clientes" },
-        "stats.years": { en: "Years of Experience", es: "Años de experiencia" },
+        "hero.cta": { en: "Browse packages", es: "Ver paquetes" },
+        "hero.cta2": { en: "Book a 30-min call", es: "Agendar 30 min" },
+        "hero.card.role": { en: "Independent consultant", es: "Consultor independiente" },
+        "hero.card.based": { en: "Santiago, Chile · working remotely with LATAM & US teams", es: "Santiago, Chile · trabajo remoto con equipos de LATAM y EE. UU." },
+        "proof.certs": { en: "Microsoft certifications", es: "certificaciones Microsoft" },
+        "proof.years": { en: "years on Azure", es: "años en Azure" },
+        "proof.sectors": { en: "industries served", es: "industrias atendidas" },
+        "proof.apps": { en: "apps live on the App Store", es: "apps publicadas en el App Store" },
 
-        "work.eyebrow": { en: "Selected work", es: "Casos seleccionados" },
-        "work.title": { en: "Recent Engagements", es: "Trabajos recientes" },
-        "work.subtitle": { en: "Anonymized cases from 2026 — sector, challenge, what I did and the outcome", es: "Casos anonimizados de 2026 — sector, desafío, qué hice y el resultado" },
-        "work.challenge": { en: "Challenge", es: "Desafío" },
-        "work.approach": { en: "What I did", es: "Qué hice" },
-        "work.outcome": { en: "Outcome", es: "Resultado" },
+        "services.eyebrow": { en: "Packages", es: "Paquetes" },
+        "services.title": { en: "Pick the package that answers your question.", es: "Elige el paquete que responde tu pregunta." },
+        "services.subtitle": { en: "Each one has a fixed scope, a fixed duration and a defined set of deliverables. Start small with a Quick Scan or go straight to the package you need.", es: "Cada uno tiene alcance fijo, duración fija y entregables definidos. Empieza pequeño con un Quick Scan o ve directo al paquete que necesitas." },
+        "services.includes": { en: "Includes", es: "Incluye" },
+        "services.ideal": { en: "For you if", es: "Es para ti si" },
+        "services.duration": { en: "Duration", es: "Duración" },
+        "services.format": { en: "Format", es: "Formato" },
+        "services.price.from": { en: "From", es: "Desde" },
+        "services.price.quote": { en: "Price on request", es: "Precio a solicitud" },
+        "services.cta": { en: "Request this package", es: "Solicitar este paquete" },
+        "services.popular": { en: "Most requested", es: "Más solicitado" },
+        "services.start": { en: "Start here", es: "Empieza aquí" },
 
-        "services.eyebrow": { en: "What I do", es: "Qué hago" },
-        "services.title": { en: "Consulting Services", es: "Servicios de consultoría" },
-        "services.subtitle": { en: "End-to-end cloud architecture and data governance solutions", es: "Arquitectura cloud y gobierno de datos de punta a punta" },
-        "tech.eyebrow": { en: "Stack & expertise", es: "Stack y especialidades" },
-        "tech.title": { en: "Technologies & Expertise", es: "Tecnologías y especialidades" },
-        "tech.subtitle": { en: "Stack and areas of specialization across cloud, data and development", es: "Stack y áreas de especialización en cloud, datos y desarrollo" },
-        "projects.eyebrow": { en: "Shipped & live", es: "Publicado y en producción" },
-        "projects.title": { en: "Personal Projects", es: "Proyectos personales" },
-        "projects.subtitle": { en: "Only products published on the App Store and available to download", es: "Solo productos publicados en el App Store y disponibles para descargar" },
-        "projects.cta": { en: "View on the App Store", es: "Ver en el App Store" },
-        "projects.aria": { en: "Open {{title}} on the App Store", es: "Abrir {{title}} en el App Store" },
+        "approach.eyebrow": { en: "How it works", es: "Cómo funciona" },
+        "approach.title": { en: "Read-only first. Evidence always.", es: "Primero solo lectura. Siempre evidencia." },
+        "approach.subtitle": { en: "The same four steps behind every package — proven across banking, retail, insurance and industry, and designed so nothing in your environment changes until you decide.", es: "Los mismos cuatro pasos detrás de cada paquete — probados en banca, retail, seguros e industria, y diseñados para que nada en tu ambiente cambie hasta que tú lo decidas." },
 
-        "contact.title": { en: "Let's Talk", es: "Hablemos" },
-        "contact.text": {
-            en: "Does your organization need cloud architecture, a Microsoft Fabric migration, platform modernization or a FinOps strategy? Reach out on LinkedIn for consulting, projects and team mentoring.",
-            es: "¿Tu organización necesita arquitectura cloud, una migración a Microsoft Fabric, modernizar su plataforma o una estrategia FinOps? Escríbeme por LinkedIn para consultorías, proyectos y mentoría de equipos."
-        },
-        "contact.cta.primary": { en: "Message me on LinkedIn", es: "Escríbeme por LinkedIn" },
-        "contact.cta.secondary": { en: "GitHub", es: "GitHub" },
-        "footer": { en: "© {{year}} Rodrigo Quintanilla — Azure Solutions Architect & iOS Developer.", es: "© {{year}} Rodrigo Quintanilla — Arquitecto de Soluciones Azure y desarrollador iOS." }
+        "guarantees.title": { en: "What you can count on", es: "Con qué puedes contar" },
+
+        "sectors.eyebrow": { en: "Experience", es: "Experiencia" },
+        "sectors.title": { en: "Industries I have worked with", es: "Industrias en las que he trabajado" },
+
+        "credentials.eyebrow": { en: "Credentials", es: "Credenciales" },
+        "credentials.title": { en: "Certified where it matters — and I ship.", es: "Certificado donde importa — y además construyo." },
+        "credentials.subtitle": { en: "Expert and associate Microsoft credentials in architecture, data and administration, plus native apps I design, build and publish myself.", es: "Credenciales Microsoft Expert y Associate en arquitectura, datos y administración, más apps nativas que diseño, construyo y publico yo mismo." },
+        "credentials.more": { en: "Show all {{n}} certifications", es: "Ver las {{n}} certificaciones" },
+        "credentials.less": { en: "Show fewer", es: "Ver menos" },
+        "credentials.apps": { en: "Products on the App Store", es: "Productos en el App Store" },
+        "credentials.appcta": { en: "View on the App Store", es: "Ver en el App Store" },
+
+        "contact.eyebrow": { en: "Not sure which package?", es: "¿No sabes qué paquete?" },
+        "contact.title": { en: "Tell me your question. I'll tell you the package.", es: "Cuéntame tu pregunta. Yo te digo el paquete." },
+        "contact.text": { en: "A 30-minute call is enough to know whether a Quick Scan, a full assessment or a migration pack is the right first move — and to give you a fixed quote.", es: "Con 30 minutos basta para saber si el primer paso es un Quick Scan, un assessment completo o un paquete de migración — y darte una cotización fija." },
+        "contact.cta": { en: "Book a 30-min call on LinkedIn", es: "Agendar 30 min por LinkedIn" },
+        "contact.cta2": { en: "GitHub", es: "GitHub" },
+        "footer.text": { en: "© {{year}} Rodrigo Quintanilla · Azure Solutions Architect Expert · Santiago, Chile", es: "© {{year}} Rodrigo Quintanilla · Azure Solutions Architect Expert · Santiago, Chile" }
     },
 
-    // Casos anonimizados (sin nombres de cliente ni identificadores) — sector + desafío + intervención + resultado
-    work: [
+    proof: [
+        { value: "7", key: "proof.certs" },
+        { value: "5+", key: "proof.years" },
+        { value: "8", key: "proof.sectors" },
+        { value: "3", key: "proof.apps" }
+    ],
+
+    // Catálogo de paquetes. size: "lg" = celda grande del bento; badge: "start" | "popular".
+    // price: null => "Precio a solicitud"; price: { from: 2500 } => "Desde USD 2.500".
+    services: [
         {
-            id: 1,
-            sector: { en: "Retail · Banking", es: "Retail · Banca" },
-            title: { en: "Power BI Premium → Microsoft Fabric migration across five capacities", es: "Migración Power BI Premium → Microsoft Fabric en cinco capacidades" },
-            challenge: { en: "Move hundreds of workspaces from Premium (P1/P2) to Fabric (F64/F128) across regions without losing content, permissions or refresh schedules.", es: "Mover cientos de workspaces de Premium (P1/P2) a Fabric (F64/F128) entre regiones sin perder contenido, permisos ni programaciones de actualización." },
-            approach: { en: "Read-only pre-migration snapshots, capacity rebalancing plan, one-by-one reassignment with exception handling, post-migration verification against the baseline and a milestone report per capacity.", es: "Snapshots de solo lectura previos a la migración, plan de rebalanceo de capacidades, reasignación uno a uno con manejo de excepciones, verificación posterior contra la línea base e informe de hito por capacidad." },
-            outcome: { en: "Zero content or permission loss detected; every deviation documented and closed; executive-ready evidence for each capacity.", es: "Sin pérdida de contenido ni permisos; cada desviación documentada y cerrada; evidencia ejecutiva por capacidad." },
-            tags: ["Microsoft Fabric", "Power BI", "Migration"]
+            id: "quick-scan", num: "01", badge: "start",
+            title: { en: "Fabric Quick Scan", es: "Fabric Quick Scan" },
+            promise: { en: "A snapshot of your Power BI / Fabric estate in five business days.", es: "Una foto de tu ambiente Power BI / Fabric en cinco días hábiles." },
+            description: { en: "Capacities, workspaces, access and failing refreshes, collected read-only and summarized for leadership. The fastest way to know where you stand.", es: "Capacidades, workspaces, accesos y refrescos fallidos, recolectados en solo lectura y resumidos para dirección. La forma más rápida de saber cómo estás." },
+            includes: [
+                { en: "Inventory of capacities, workspaces and items", es: "Inventario de capacidades, workspaces e ítems" },
+                { en: "Access & failing-refresh overview", es: "Panorama de accesos y refrescos fallidos" },
+                { en: "10-page executive summary + 1-hour readout", es: "Resumen ejecutivo de 10 páginas + 1 hora de lectura" }
+            ],
+            ideal: { en: "you need a first, credible picture before anything else.", es: "necesitas una primera foto creíble antes de cualquier otra cosa." },
+            duration: { en: "5 business days", es: "5 días hábiles" },
+            format: { en: "Remote · read-only", es: "Remoto · solo lectura" },
+            price: null
         },
         {
-            id: 2,
-            sector: { en: "Insurance", es: "Seguros" },
-            title: { en: "Premium P2 → Fabric F128 with pre/post verification", es: "Premium P2 → Fabric F128 con verificación pre/post" },
-            challenge: { en: "A regulated organization needed proof that reassigning its Power BI estate to Fabric changed nothing but the capacity.", es: "Una organización regulada necesitaba evidencia de que reasignar su ambiente Power BI a Fabric no cambiaba nada más que la capacidad." },
-            approach: { en: "Baseline snapshot, delegated read-only admin access, automated comparison of inventory, users and roles, and a formal verification document.", es: "Snapshot de línea base, acceso admin delegado de solo lectura, comparación automatizada de inventario, usuarios y roles, y documento formal de verificación." },
-            outcome: { en: "Migration signed off within a week with a reproducible, auditable trail.", es: "Migración aprobada en una semana con trazabilidad reproducible y auditable." },
-            tags: ["Microsoft Fabric", "Governance", "Audit"]
+            id: "assessment", num: "02", size: "lg", badge: "popular",
+            title: { en: "Fabric & Azure Estate Assessment", es: "Assessment del ambiente Fabric y Azure" },
+            promise: { en: "Know exactly what you have, what it costs and what to fix first.", es: "Sabe exactamente qué tienes, cuánto cuesta y qué arreglar primero." },
+            description: { en: "The full radiography: capacities, workspaces, item-level access, governance gaps, failing refreshes and cost. Every finding ranked by business impact, with a plan your team can execute.", es: "La radiografía completa: capacidades, workspaces, accesos por ítem, brechas de gobierno, refrescos fallidos y costo. Cada hallazgo priorizado por impacto de negocio, con un plan que tu equipo puede ejecutar." },
+            includes: [
+                { en: "Everything in Quick Scan, tenant-wide", es: "Todo lo del Quick Scan, a nivel de tenant" },
+                { en: "Item-level access & governance review", es: "Revisión de accesos por ítem y gobierno" },
+                { en: "Executive report + technical annex", es: "Informe ejecutivo + anexo técnico" },
+                { en: "Prioritized 90-day roadmap", es: "Roadmap priorizado a 90 días" },
+                { en: "2 readout sessions (leadership / engineering)", es: "2 sesiones de lectura (dirección / ingeniería)" }
+            ],
+            ideal: { en: "you inherited a platform, plan a migration or leadership asks “where do we stand?”", es: "heredaste una plataforma, planeas una migración o dirección pregunta «¿cómo estamos?»" },
+            duration: { en: "3 weeks", es: "3 semanas" },
+            format: { en: "Remote · read-only · written scope & consent", es: "Remoto · solo lectura · alcance y consentimiento por escrito" },
+            price: null
         },
         {
-            id: 3,
-            sector: { en: "Retail", es: "Retail" },
-            title: { en: "Data gateway performance and refresh redistribution", es: "Rendimiento de data gateways y redistribución de refrescos" },
-            challenge: { en: "Business-critical semantic models were failing or running late during the morning refresh window.", es: "Modelos semánticos críticos fallaban o llegaban tarde en la ventana de refresco de la mañana." },
-            approach: { en: "Tenant-wide gateway inventory, refresh history by lineage, per-model internals (partitions, incremental refresh, sources) and a redistribution plan across gateway clusters and time slots.", es: "Inventario de gateways a nivel tenant, historial de refrescos por linaje, internos por modelo (particiones, refresco incremental, orígenes) y plan de redistribución entre clusters de gateway y horarios." },
-            outcome: { en: "Clear root cause per model and a prioritized plan the client could execute without downtime.", es: "Causa raíz clara por modelo y un plan priorizado ejecutable sin interrupciones." },
-            tags: ["Power BI", "Gateways", "Performance"]
+            id: "migration", num: "03",
+            title: { en: "Premium → Fabric Migration Pack", es: "Paquete de migración Premium → Fabric" },
+            promise: { en: "Move to Fabric with before/after proof.", es: "Múdate a Fabric con evidencia antes/después." },
+            description: { en: "Plan, rebalance, execute and verify the move from Power BI Premium to Fabric capacities, with an evidence trail that proves nothing but the capacity changed.", es: "Planificar, rebalancear, ejecutar y verificar el paso de Power BI Premium a capacidades Fabric, con evidencia que demuestra que solo cambió la capacidad." },
+            includes: [
+                { en: "Migration & rebalancing plan", es: "Plan de migración y rebalanceo" },
+                { en: "Pre-migration snapshot", es: "Snapshot previo a la migración" },
+                { en: "Post-migration verification report", es: "Informe de verificación posterior" }
+            ],
+            ideal: { en: "your Premium capacities are ending or you consolidate regions.", es: "tus capacidades Premium terminan o consolidas regiones." },
+            duration: { en: "3–6 weeks", es: "3–6 semanas" },
+            format: { en: "Remote · execution with your admin", es: "Remoto · ejecución junto a tu admin" },
+            price: null
         },
         {
-            id: 4,
-            sector: { en: "Food & Consumer Goods · Construction", es: "Alimentos y consumo masivo · Construcción" },
-            title: { en: "Current-state assessment of the Power BI / Fabric estate", es: "Assessment de estado actual del ambiente Power BI / Fabric" },
-            challenge: { en: "Leadership had no consolidated view of capacities, workspaces, who had access to what, or which refreshes were failing.", es: "La dirección no tenía una vista consolidada de capacidades, workspaces, quién accedía a qué ni qué refrescos fallaban." },
-            approach: { en: "Read-only collection through the platform's administration tooling, item-level access extraction, failure analysis and a business-language report with a prioritized roadmap.", es: "Recolección de solo lectura con las herramientas de administración de la plataforma, extracción de accesos por ítem, análisis de fallos e informe en lenguaje de negocio con roadmap priorizado." },
-            outcome: { en: "A single source of truth for the estate and quick wins on access hygiene and broken refreshes.", es: "Una única fuente de verdad del ambiente y mejoras rápidas en higiene de accesos y refrescos rotos." },
-            tags: ["Assessment", "Access Governance", "Power BI"]
+            id: "finops", num: "04",
+            title: { en: "Capacity & FinOps Review", es: "Revisión de capacidad y FinOps" },
+            promise: { en: "Keep, grow or optimize — decided with real consumption data.", es: "Mantener, crecer u optimizar — decidido con consumo real." },
+            description: { en: "Two weeks of capacity telemetry turned into a quantified sizing verdict and an optimization backlog, before you commit to a renewal or upgrade.", es: "Dos semanas de telemetría de capacidad convertidas en un veredicto de dimensionamiento cuantificado y un backlog de optimización, antes de comprometer una renovación o upgrade." },
+            includes: [
+                { en: "Consumption & throttling analysis", es: "Análisis de consumo y throttling" },
+                { en: "Top consumers and refactor candidates", es: "Principales consumidores y candidatos a refactor" },
+                { en: "Sizing verdict with evidence", es: "Veredicto de dimensionamiento con evidencia" }
+            ],
+            ideal: { en: "a renewal, upgrade or budget cut is on the table.", es: "hay una renovación, upgrade o recorte de presupuesto sobre la mesa." },
+            duration: { en: "2 weeks", es: "2 semanas" },
+            format: { en: "Remote · read-only", es: "Remoto · solo lectura" },
+            price: null
         },
         {
-            id: 5,
-            sector: { en: "Ports & Logistics", es: "Puertos y logística" },
-            title: { en: "Fabric capacity sizing with real consumption data", es: "Dimensionamiento de capacidad Fabric con consumo real" },
-            challenge: { en: "Decide whether an F4 capacity had to grow — or be refactored — before committing budget.", es: "Decidir si una capacidad F4 debía crecer — o refactorizarse — antes de comprometer presupuesto." },
-            approach: { en: "Two weeks of Capacity Metrics telemetry, top consumers by compute unit, throttling and rejection analysis, and an executive summary with a quantified verdict.", es: "Dos semanas de telemetría de Capacity Metrics, principales consumidores por unidad de cómputo, análisis de throttling y rechazos, y resumen ejecutivo con veredicto cuantificado." },
-            outcome: { en: "Recommendation to keep the current SKU with monitoring — avoiding an unnecessary upgrade — plus the dataflows to optimize first.", es: "Recomendación de mantener el SKU actual con monitoreo — evitando un upgrade innecesario — y los dataflows a optimizar primero." },
-            tags: ["Microsoft Fabric", "Capacity", "FinOps"]
+            id: "architecture", num: "05",
+            title: { en: "Azure Foundations Blueprint", es: "Blueprint de fundaciones Azure" },
+            promise: { en: "A regulated-grade landing zone, designed once.", es: "Una landing zone de grado regulado, diseñada una sola vez." },
+            description: { en: "Cloud Adoption and Well-Architected frameworks applied to your reality: identity, network, security and cost guardrails that pass audit, delivered as architecture and IaC baseline.", es: "Cloud Adoption y Well-Architected Framework aplicados a tu realidad: identidad, red, seguridad y controles de costo que pasan auditoría, entregados como arquitectura y base IaC." },
+            includes: [
+                { en: "Target architecture & decision log", es: "Arquitectura objetivo y registro de decisiones" },
+                { en: "IaC baseline (Bicep/Terraform)", es: "Base IaC (Bicep/Terraform)" },
+                { en: "Governance & security controls", es: "Controles de gobierno y seguridad" }
+            ],
+            ideal: { en: "you start on Azure or fix an environment that grew without design.", es: "empiezas en Azure o corriges un ambiente que creció sin diseño." },
+            duration: { en: "4–8 weeks", es: "4–8 semanas" },
+            format: { en: "Remote · workshops with your team", es: "Remoto · talleres con tu equipo" },
+            price: null
+        },
+        {
+            id: "advisory", num: "06",
+            title: { en: "Fractional Architect", es: "Arquitecto fraccional" },
+            promise: { en: "Senior judgment, a few hours a week.", es: "Criterio senior, unas horas a la semana." },
+            description: { en: "Ongoing architecture reviews, standards and mentoring so your team ships with confidence — without a full-time hire.", es: "Revisiones de arquitectura, estándares y mentoría continuas para que tu equipo entregue con confianza — sin una contratación full-time." },
+            includes: [
+                { en: "Monthly review & decision log", es: "Revisión mensual y registro de decisiones" },
+                { en: "Standards & playbooks", es: "Estándares y playbooks" },
+                { en: "Async access for questions", es: "Canal asíncrono para consultas" }
+            ],
+            ideal: { en: "you need a second opinion you can trust, every month.", es: "necesitas una segunda opinión confiable, cada mes." },
+            duration: { en: "Monthly retainer", es: "Retainer mensual" },
+            format: { en: "Remote · 4–8 h / week", es: "Remoto · 4–8 h / semana" },
+            price: null
         }
     ],
 
-    services: [
-        { id: 1, icon: "☁️", title: { en: "Cloud Architecture", es: "Arquitectura Cloud" },
-          description: { en: "Design of scalable and secure solutions on Azure. Applying the Cloud Adoption Framework (CAF) and Well-Architected Framework (WAF) to ensure operational excellence.", es: "Diseño de soluciones escalables y seguras en Azure. Aplicación de Cloud Adoption Framework (CAF) y Well-Architected Framework (WAF) para asegurar excelencia operacional." } },
-        { id: 2, icon: "📊", title: { en: "Data Platforms", es: "Plataformas de datos" },
-          description: { en: "Implementation of Microsoft Fabric, Data Lakes and enterprise-scale analytics. Modern analytics architecture with Azure Data Factory and Azure Synapse integration.", es: "Implementación de Microsoft Fabric, Data Lakes y analítica a escala empresarial. Arquitectura moderna de analítica con integración de Azure Data Factory y Azure Synapse." } },
-        { id: 3, icon: "💰", title: { en: "FinOps & Optimization", es: "FinOps y optimización" },
-          description: { en: "Advanced strategies to reduce infrastructure costs by up to 50%. Spend governance, right-sizing and reservation planning.", es: "Estrategias avanzadas para reducir hasta un 50% los costos de infraestructura. Gobierno del gasto, right-sizing y planificación de reservas." } },
-        { id: 4, icon: "🔐", title: { en: "Security & Compliance", es: "Seguridad y cumplimiento" },
-          description: { en: "Architecture of regulated environments with CAF controls, private networks and data classification. Compliance with sovereignty and audit requirements.", es: "Arquitectura de ambientes regulados con controles CAF, redes privadas y clasificación de datos. Cumplimiento de requisitos de soberanía y auditoría." } },
-        { id: 5, icon: "🔄", title: { en: "DevOps & IaC", es: "DevOps e IaC" },
-          description: { en: "CI/CD pipelines with Azure DevOps. Infrastructure as Code with Terraform and ARM Templates. Deployment automation and release management.", es: "Pipelines CI/CD con Azure DevOps. Infraestructura como código con Terraform y ARM Templates. Automatización de despliegues y gestión de releases." } },
-        { id: 6, icon: "👥", title: { en: "Technical Leadership", es: "Liderazgo técnico" },
-          description: { en: "Mentoring infrastructure teams. Establishing standards and best practices. Knowledge transfer and technical training.", es: "Mentoría de equipos de infraestructura. Definición de estándares y buenas prácticas. Transferencia de conocimiento y capacitación técnica." } }
+
+    approach: [
+        { num: "01", title: { en: "Scope & consent", es: "Alcance y consentimiento" }, text: { en: "We agree in writing what is in scope and which minimal read-only access I get. Nothing starts before that.", es: "Acordamos por escrito el alcance y el acceso mínimo de solo lectura. Nada empieza antes." } },
+        { num: "02", title: { en: "Read-only discovery", es: "Levantamiento de solo lectura" }, text: { en: "Automated, reproducible collection through the platform's own administration tooling. Zero changes to your environment.", es: "Recolección automatizada y reproducible con las herramientas de administración de la plataforma. Cero cambios en tu ambiente." } },
+        { num: "03", title: { en: "Evidence & findings", es: "Evidencia y hallazgos" }, text: { en: "Every finding is tied to data you can audit, rated by business impact — not by how technical it sounds.", es: "Cada hallazgo se apoya en datos auditables y se prioriza por impacto de negocio — no por lo técnico que suene." } },
+        { num: "04", title: { en: "Decision & roadmap", es: "Decisión y roadmap" }, text: { en: "An executive summary for leadership, a technical annex for engineers, and a plan your team can execute — with me or without me.", es: "Resumen ejecutivo para dirección, anexo técnico para ingeniería y un plan que tu equipo puede ejecutar — conmigo o sin mí." } }
     ],
 
-    techStack: [
-        { id: 1, icon: "☁️", category: { en: "Cloud & Azure", es: "Cloud y Azure" }, items: ["Microsoft Azure", "Azure Solutions Architect", "Cloud Adoption Framework", "Well-Architected Framework", "Azure Administrator", "Landing Zones"] },
-        { id: 2, icon: "📊", category: { en: "Data & Analytics", es: "Datos y analítica" }, items: ["Microsoft Fabric", "Power BI", "Azure Synapse Analytics", "Azure Data Factory", "Data Lake Storage", "Lakehouse"] },
-        { id: 3, icon: "🔄", category: { en: "IaC & DevOps", es: "IaC y DevOps" }, items: ["Terraform", "Bicep", "ARM Templates", "Azure DevOps", "CI/CD", "GitHub Actions"] },
-        { id: 4, icon: "💰", category: { en: "Governance & FinOps", es: "Gobierno y FinOps" }, items: ["FinOps", "Cost Optimization", "Cloud Governance", "Security & Compliance", "Microsoft Purview", "RBAC"] },
-        { id: 5, icon: "💻", category: { en: "iOS / macOS Development", es: "Desarrollo iOS / macOS" }, items: ["Swift", "SwiftUI", "SwiftData", "CoreImage", "Apple Vision", "StoreKit 2"] },
-        { id: 6, icon: "🧭", category: { en: "Methodologies & Leadership", es: "Metodologías y liderazgo" }, items: ["Agile / Scrum", "Scrum Master", "Team Leadership", "Enterprise Architecture", "Technical Mentoring"] }
+    guarantees: [
+        { en: "Read-only by default — nothing changes until you approve it", es: "Solo lectura por defecto — nada cambia hasta que lo apruebas" },
+        { en: "Written scope, consent and minimal access for every engagement", es: "Alcance, consentimiento y acceso mínimo por escrito en cada servicio" },
+        { en: "Evidence you can audit, not opinions", es: "Evidencia auditable, no opiniones" },
+        { en: "One report for executives, one annex for engineers", es: "Un informe para dirección, un anexo para ingeniería" },
+        { en: "Your data stays yours: identifiers never leave the engagement", es: "Tus datos siguen siendo tuyos: los identificadores no salen del servicio" }
     ],
 
-    projects: [
-        { id: 1, title: "Safeplace", subtitle: { en: "Security app for iOS", es: "App de seguridad para iOS" },
-          description: { en: "Native app focused on private protection of files, photos and videos with a zero-server approach and on-device encryption.", es: "App nativa para proteger archivos, fotos y videos de forma privada, sin servidores y con cifrado en el dispositivo." },
-          year: { en: "2025 – Present", es: "2025 – Presente" }, platform: "iOS", icon: "assets/img/apps/safeplace.png",
-          appStoreUrl: "https://apps.apple.com/us/app/safeplace-vault/id6761115917", tags: ["SwiftUI", "iOS", "Security"] },
-        { id: 2, title: "FlowImage", subtitle: { en: "Cross-platform image converter", es: "Conversor de imágenes multiplataforma" },
-          description: { en: "Native app for macOS, iPhone and iPad for image conversion with a unified SwiftUI codebase.", es: "App nativa para macOS, iPhone y iPad para conversión de imágenes con una única base de código SwiftUI." },
-          year: { en: "2026 – Present", es: "2026 – Presente" }, platform: "macOS / iOS / iPadOS", icon: "assets/img/apps/flowimage.png",
-          appStoreUrl: "https://apps.apple.com/us/app/flowimagemac/id6761324168?mt=12", tags: ["SwiftUI", "macOS", "ImageIO"] },
-        { id: 3, title: "Time2Split", subtitle: { en: "Expense splitting app for iOS", es: "App para dividir gastos en iOS" },
-          description: { en: "Native iOS app to split bills and expenses across groups with OCR receipt scanning (Apple Vision), 30 currencies and smart debt settlement, fully on-device.", es: "App nativa iOS para dividir cuentas y gastos en grupos, con escaneo OCR de boletas (Apple Vision), 30 monedas y liquidación inteligente de deudas, todo en el dispositivo." },
-          year: { en: "2026 – Present", es: "2026 – Presente" }, platform: "iOS", icon: "assets/img/apps/time2split.png",
-          appStoreUrl: "https://apps.apple.com/us/app/time2split/id6761983454", tags: ["SwiftUI", "SwiftData", "Vision"] }
-    ],
-
-    // Las 3 primeras se muestran siempre; el resto detrás de "Ver todas"
-    certifications: [
-        { id: 1, badge: "assets/img/certs/az-305.png", title: "Azure Solutions Architect Expert", code: "AZ-305", date: "July 2022", level: "Expert" },
-        { id: 2, badge: "assets/img/certs/microsoft-associate.svg", title: "Fabric Analytics Engineer Associate", code: "DP-600", date: "June 2024", level: "Associate" },
-        { id: 3, badge: "assets/img/certs/az-104.png", title: "Azure Administrator Associate", code: "AZ-104", date: "May 2022", level: "Associate" },
-        { id: 4, badge: "assets/img/certs/dp-900.png", title: "Azure Data Fundamentals", code: "DP-900", date: "April 2022", level: "Fundamentals" },
-        { id: 5, badge: "assets/img/certs/ai-900.png", title: "Azure AI Fundamentals", code: "AI-900", date: "April 2022", level: "Fundamentals" },
-        { id: 6, badge: "assets/img/certs/az-900.png", title: "Azure Fundamentals", code: "AZ-900", date: "March 2022", level: "Fundamentals" },
-        { id: 7, badge: "assets/img/certs/sc-900.png", title: "Security, Compliance and Identity Fundamentals", code: "SC-900", date: "", level: "Fundamentals" },
-        { id: 8, badge: "assets/img/certs/smpc.png", title: "Scrum Master Professional", code: "SMPC", date: "July 2020", level: "Professional" },
-        { id: 9, badge: "assets/img/certs/spopc.png", title: "Scrum Product Owner Professional", code: "SPOPC", date: "", level: "Professional" }
-    ],
-
-    // Sectores (hero) — incluye los de los assessments 2026, sin nombres de cliente
     sectors: [
         { en: "Banking", es: "Banca" }, { en: "Retail", es: "Retail" }, { en: "Insurance", es: "Seguros" },
-        { en: "Construction", es: "Construcción" }, { en: "Food & Consumer Goods", es: "Alimentos y consumo masivo" },
+        { en: "Construction & Engineering", es: "Construcción e ingeniería" }, { en: "Food & Consumer Goods", es: "Alimentos y consumo masivo" },
         { en: "Ports & Logistics", es: "Puertos y logística" }, { en: "Government", es: "Gobierno" }, { en: "Mining", es: "Minería" }
     ],
-    areas: [
-        { en: "Data Platforms", es: "Plataformas de datos" }, { en: "Microsoft Fabric", es: "Microsoft Fabric" }, { en: "Cloud Architecture", es: "Arquitectura cloud" },
-        { en: "Migrations", es: "Migraciones" }, { en: "FinOps", es: "FinOps" }, { en: "DevOps", es: "DevOps" }, { en: "Security", es: "Seguridad" }, { en: "IaC", es: "IaC" }
+
+    // Las 3 primeras siempre visibles
+    certifications: [
+        { badge: "assets/img/certs/az-305.png", title: "Azure Solutions Architect Expert", code: "AZ-305", level: "Expert" },
+        { badge: "assets/img/certs/microsoft-associate.svg", title: "Fabric Analytics Engineer Associate", code: "DP-600", level: "Associate" },
+        { badge: "assets/img/certs/az-104.png", title: "Azure Administrator Associate", code: "AZ-104", level: "Associate" },
+        { badge: "assets/img/certs/dp-900.png", title: "Azure Data Fundamentals", code: "DP-900", level: "Fundamentals" },
+        { badge: "assets/img/certs/ai-900.png", title: "Azure AI Fundamentals", code: "AI-900", level: "Fundamentals" },
+        { badge: "assets/img/certs/az-900.png", title: "Azure Fundamentals", code: "AZ-900", level: "Fundamentals" },
+        { badge: "assets/img/certs/sc-900.png", title: "Security, Compliance and Identity Fundamentals", code: "SC-900", level: "Fundamentals" },
+        { badge: "assets/img/certs/smpc.png", title: "Scrum Master Professional", code: "SMPC", level: "Professional" },
+        { badge: "assets/img/certs/spopc.png", title: "Scrum Product Owner Professional", code: "SPOPC", level: "Professional" }
     ],
 
-    metadata: { version: "1.1.0", lastUpdated: "2026-09-02" }
+    apps: [
+        { title: "Safeplace", tagline: { en: "Private vault for files, photos and videos — on-device encryption, zero servers.", es: "Bóveda privada para archivos, fotos y videos — cifrado en el dispositivo, sin servidores." }, platform: "iOS", icon: "assets/img/apps/safeplace.png", url: "https://apps.apple.com/us/app/safeplace-vault/id6761115917" },
+        { title: "FlowImage", tagline: { en: "Image converter for macOS, iPhone and iPad from one SwiftUI codebase.", es: "Conversor de imágenes para macOS, iPhone y iPad desde una sola base SwiftUI." }, platform: "macOS · iOS · iPadOS", icon: "assets/img/apps/flowimage.png", url: "https://apps.apple.com/us/app/flowimagemac/id6761324168?mt=12" },
+        { title: "Time2Split", tagline: { en: "Split expenses with OCR receipt scanning and smart settlement, fully on-device.", es: "Divide gastos con escaneo OCR de boletas y liquidación inteligente, todo en el dispositivo." }, platform: "iOS", icon: "assets/img/apps/time2split.png", url: "https://apps.apple.com/us/app/time2split/id6761983454" }
+    ],
+
+    metadata: { version: "2.0.0", lastUpdated: "2026-09-02" }
 };
 
 if (typeof module !== 'undefined' && module.exports) {
