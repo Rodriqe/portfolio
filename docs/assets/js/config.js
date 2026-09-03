@@ -43,7 +43,7 @@ const portfolioConfig = {
 
         "services.eyebrow": { en: "Services", es: "Servicios" },
         "services.title": { en: "What I can do for your platform.", es: "Qué puedo hacer por tu plataforma." },
-        "services.subtitle": { en: "Six ways I usually help. Each starts read-only, is scoped in writing and ends with something your team can act on the same week.", es: "Seis formas en que suelo ayudar. Cada una empieza en solo lectura, se acota por escrito y termina con algo que tu equipo puede aplicar la misma semana." },
+        "services.subtitle": { en: "Eight ways I usually help. Each starts read-only, is scoped in writing and ends with something your team can act on the same week.", es: "Ocho formas en que suelo ayudar. Cada una empieza en solo lectura, se acota por escrito y termina con algo que tu equipo puede aplicar la misma semana." },
         "services.cta": { en: "Ask about this", es: "Consultar por esto" },
 
         "approach.eyebrow": { en: "How I work", es: "Cómo trabajo" },
@@ -134,6 +134,26 @@ const portfolioConfig = {
         },
         {
             num: "05",
+            title: { en: "Azure security & governance posture review", es: "Revisión de postura de seguridad y gobierno en Azure" },
+            description: { en: "A read-only review of identity, access, policies and exposure across your subscriptions — Entra ID, RBAC, Defender findings, network exposure and policy compliance — prioritized by risk and mapped to the Well-Architected security pillar.", es: "Una revisión de solo lectura de identidad, accesos, políticas y exposición en tus suscripciones — Entra ID, RBAC, hallazgos de Defender, exposición de red y cumplimiento de políticas — priorizada por riesgo y mapeada al pilar de seguridad de Well-Architected." },
+            quickwins: [
+                { en: "Over-privileged identities and stale credentials found in days", es: "Identidades sobre-privilegiadas y credenciales vencidas detectadas en días" },
+                { en: "Public exposure and missing encryption listed by resource", es: "Exposición pública y cifrado faltante listados por recurso" },
+                { en: "A remediation plan ranked by risk, not by noise", es: "Un plan de remediación ordenado por riesgo, no por ruido" }
+            ]
+        },
+        {
+            num: "06",
+            title: { en: "Azure migration & subscription consolidation", es: "Migración y consolidación de suscripciones Azure" },
+            description: { en: "Inventory, mobility analysis and a costed plan to move workloads into Azure or between subscriptions and tenants — what moves as-is, what must be recreated, and in which order.", es: "Inventario, análisis de movilidad y plan costeado para mover cargas a Azure o entre suscripciones y tenants — qué se mueve tal cual, qué debe recrearse y en qué orden." },
+            quickwins: [
+                { en: "A resource-by-resource mobility matrix", es: "Una matriz de movilidad recurso por recurso" },
+                { en: "Effort and risk estimated before anyone touches production", es: "Esfuerzo y riesgo estimados antes de tocar producción" },
+                { en: "Wave plan with rollback points", es: "Plan por olas con puntos de retorno" }
+            ]
+        },
+        {
+            num: "07",
             title: { en: "Data platform & governed reporting", es: "Plataforma de datos y reportería gobernada" },
             description: { en: "Lakehouse and medallion design on Fabric, a Gold layer your Power BI can trust, and reporting platforms deployed reproducibly with CI/CD.", es: "Diseño lakehouse y medallón en Fabric, una capa Gold en la que tu Power BI confía y plataformas de reportería desplegadas de forma reproducible con CI/CD." },
             quickwins: [
@@ -143,7 +163,7 @@ const portfolioConfig = {
             ]
         },
         {
-            num: "06",
+            num: "08",
             title: { en: "Fractional architect & team enablement", es: "Arquitecto fraccional y habilitación de equipos" },
             description: { en: "Ongoing architecture reviews, standards and mentoring a few hours a week, so your team ships with confidence without a full-time hire.", es: "Revisiones de arquitectura, estándares y mentoría continuas unas horas a la semana, para que tu equipo entregue con confianza sin una contratación full-time." },
             quickwins: [
