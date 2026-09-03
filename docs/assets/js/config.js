@@ -11,60 +11,44 @@ const portfolioConfig = {
     links: {
         linkedin: "https://www.linkedin.com/in/rigoqe/",
         github: "https://github.com/Rodriqe",
-        // CTA de cada paquete. Hoy LinkedIn; con dominio propio pasa a ser mailto:/formulario/Calendly.
+        // CTA "Consultar por esto" de cada servicio. Hoy LinkedIn; con dominio propio: mailto:/formulario/Calendly.
         order: "https://www.linkedin.com/in/rigoqe/"
     },
 
-    // Moneda y cómo mostrar precios. price: null => "a solicitud". Ej.: price: { from: 2500 }
-    pricing: { currency: "USD", show: true },
 
     strings: {
-        "meta.title": { en: "Rodrigo Quintanilla — Packaged Azure & Microsoft Fabric consulting", es: "Rodrigo Quintanilla — Consultoría empaquetada en Azure y Microsoft Fabric" },
-        "meta.description": {
-            en: "Fixed-scope, fixed-duration consulting packages for Azure and Microsoft Fabric: quick scans, current-state assessments, Fabric migrations, capacity & FinOps reviews and fractional architecture. Read-only, evidence-based.",
-            es: "Paquetes de consultoría de alcance y duración fijos para Azure y Microsoft Fabric: quick scans, assessments de estado actual, migraciones a Fabric, revisiones de capacidad y FinOps y arquitectura fraccional. Solo lectura, basados en evidencia."
-        },
+        "meta.title": { en: "Rodrigo Quintanilla — Azure Solutions Architect & Microsoft Fabric consultant", es: "Rodrigo Quintanilla — Arquitecto de soluciones Azure y consultor Microsoft Fabric" },
+        "meta.description": { en: "Azure Solutions Architect Expert based in Santiago, Chile. Assessments, migrations, capacity sizing and cloud architecture for Azure and Microsoft Fabric, delivered read-only and with evidence leadership can act on.", es: "Azure Solutions Architect Expert en Santiago, Chile. Assessments, migraciones, dimensionamiento de capacidad y arquitectura cloud para Azure y Microsoft Fabric, en solo lectura y con evidencia sobre la que dirección puede actuar." },
         "skip": { en: "Skip to content", es: "Saltar al contenido" },
-        "nav.services": { en: "Packages", es: "Paquetes" },
-        "nav.approach": { en: "How it works", es: "Cómo funciona" },
+        "nav.services": { en: "Services", es: "Servicios" },
+        "nav.approach": { en: "How I work", es: "Cómo trabajo" },
         "nav.credentials": { en: "Credentials", es: "Credenciales" },
         "nav.contact": { en: "Contact", es: "Contacto" },
-        "nav.cta": { en: "Book a call", es: "Agendar llamada" },
+        "nav.cta": { en: "Let's talk", es: "Hablemos" },
         "lang.switch": { en: "Cambiar a español", es: "Switch to English" },
 
-        "hero.eyebrow": { en: "Azure Solutions Architect Expert · Microsoft Fabric", es: "Azure Solutions Architect Expert · Microsoft Fabric" },
-        "hero.h1.a": { en: "Consulting you can buy", es: "Consultoría que se compra" },
-        "hero.h1.b": { en: "like a product:", es: "como un producto:" },
-        "hero.h1.c": { en: "fixed scope, fixed time, real evidence.", es: "alcance fijo, tiempo fijo, evidencia real." },
-        "hero.lead": {
-            en: "Packaged assessments, migrations and capacity reviews for Azure and Microsoft Fabric. You know what you get, when you get it and what it costs — before we start. Every package is read-only by default and ends with a decision your leadership can act on.",
-            es: "Assessments, migraciones y revisiones de capacidad empaquetados para Azure y Microsoft Fabric. Sabes qué recibes, cuándo y cuánto cuesta — antes de empezar. Cada paquete es de solo lectura por defecto y termina con una decisión sobre la que dirección puede actuar."
-        },
-        "hero.cta": { en: "Browse packages", es: "Ver paquetes" },
-        "hero.cta2": { en: "Book a 30-min call", es: "Agendar 30 min" },
-        "hero.card.role": { en: "Independent consultant", es: "Consultor independiente" },
+        "hero.eyebrow": { en: "Azure Solutions Architect Expert · Santiago, Chile", es: "Azure Solutions Architect Expert · Santiago, Chile" },
+        "hero.h1.a": { en: "I help organizations", es: "Ayudo a organizaciones a" },
+        "hero.h1.b": { en: "see, move and right‑size", es: "ver, mover y dimensionar" },
+        "hero.h1.c": { en: "their Azure & Fabric platforms.", es: "sus plataformas Azure y Fabric." },
+        "hero.lead": { en: "Independent architect with more than five years on Microsoft Azure, working with banks, retailers, insurers and industrial companies. I assess data platforms, lead migrations to Microsoft Fabric and size capacity with real consumption data — always read-only first, always with evidence your leadership can decide on. On the side, I design and ship native Apple apps.", es: "Arquitecto independiente con más de cinco años en Microsoft Azure, trabajando con bancos, retailers, aseguradoras e industria. Evalúo plataformas de datos, lidero migraciones a Microsoft Fabric y dimensiono capacidad con consumo real — siempre en solo lectura primero, siempre con evidencia sobre la que dirección puede decidir. Además, diseño y publico apps nativas para Apple." },
+        "hero.cta": { en: "See what I do", es: "Ver qué hago" },
+        "hero.cta2": { en: "Talk on LinkedIn", es: "Hablemos por LinkedIn" },
+        "hero.card.role": { en: "Azure Solutions Architect Expert", es: "Azure Solutions Architect Expert" },
         "hero.card.based": { en: "Santiago, Chile · working remotely with LATAM & US teams", es: "Santiago, Chile · trabajo remoto con equipos de LATAM y EE. UU." },
         "proof.certs": { en: "Microsoft certifications", es: "certificaciones Microsoft" },
         "proof.years": { en: "years on Azure", es: "años en Azure" },
         "proof.sectors": { en: "industries served", es: "industrias atendidas" },
         "proof.apps": { en: "apps live on the App Store", es: "apps publicadas en el App Store" },
 
-        "services.eyebrow": { en: "Packages", es: "Paquetes" },
-        "services.title": { en: "Pick the package that answers your question.", es: "Elige el paquete que responde tu pregunta." },
-        "services.subtitle": { en: "Each one has a fixed scope, a fixed duration and a defined set of deliverables. Start small with a Quick Scan or go straight to the package you need.", es: "Cada uno tiene alcance fijo, duración fija y entregables definidos. Empieza pequeño con un Quick Scan o ve directo al paquete que necesitas." },
-        "services.includes": { en: "Includes", es: "Incluye" },
-        "services.ideal": { en: "For you if", es: "Es para ti si" },
-        "services.duration": { en: "Duration", es: "Duración" },
-        "services.format": { en: "Format", es: "Formato" },
-        "services.price.from": { en: "From", es: "Desde" },
-        "services.price.quote": { en: "Price on request", es: "Precio a solicitud" },
-        "services.cta": { en: "Request this package", es: "Solicitar este paquete" },
-        "services.popular": { en: "Most requested", es: "Más solicitado" },
-        "services.start": { en: "Start here", es: "Empieza aquí" },
+        "services.eyebrow": { en: "Services", es: "Servicios" },
+        "services.title": { en: "What I can do for your platform.", es: "Qué puedo hacer por tu plataforma." },
+        "services.subtitle": { en: "Six ways I usually help. Each starts read-only, is scoped in writing and ends with something your team can act on the same week.", es: "Seis formas en que suelo ayudar. Cada una empieza en solo lectura, se acota por escrito y termina con algo que tu equipo puede aplicar la misma semana." },
+        "services.cta": { en: "Ask about this", es: "Consultar por esto" },
 
-        "approach.eyebrow": { en: "How it works", es: "Cómo funciona" },
+        "approach.eyebrow": { en: "How I work", es: "Cómo trabajo" },
         "approach.title": { en: "Read-only first. Evidence always.", es: "Primero solo lectura. Siempre evidencia." },
-        "approach.subtitle": { en: "The same four steps behind every package — proven across banking, retail, insurance and industry, and designed so nothing in your environment changes until you decide.", es: "Los mismos cuatro pasos detrás de cada paquete — probados en banca, retail, seguros e industria, y diseñados para que nada en tu ambiente cambie hasta que tú lo decidas." },
+        "approach.subtitle": { en: "The same four steps behind every engagement — proven across banking, retail, insurance and industry, and designed so nothing in your environment changes until you decide.", es: "Los mismos cuatro pasos detrás de cada trabajo — probados en banca, retail, seguros e industria, y diseñados para que nada en tu ambiente cambie hasta que tú lo decidas." },
 
         "guarantees.title": { en: "What you can count on", es: "Con qué puedes contar" },
 
@@ -79,12 +63,13 @@ const portfolioConfig = {
         "credentials.apps": { en: "Products on the App Store", es: "Productos en el App Store" },
         "credentials.appcta": { en: "View on the App Store", es: "Ver en el App Store" },
 
-        "contact.eyebrow": { en: "Not sure which package?", es: "¿No sabes qué paquete?" },
-        "contact.title": { en: "Tell me your question. I'll tell you the package.", es: "Cuéntame tu pregunta. Yo te digo el paquete." },
-        "contact.text": { en: "A 30-minute call is enough to know whether a Quick Scan, a full assessment or a migration pack is the right first move — and to give you a fixed quote.", es: "Con 30 minutos basta para saber si el primer paso es un Quick Scan, un assessment completo o un paquete de migración — y darte una cotización fija." },
-        "contact.cta": { en: "Book a 30-min call on LinkedIn", es: "Agendar 30 min por LinkedIn" },
+        "contact.eyebrow": { en: "Next step", es: "Siguiente paso" },
+        "contact.title": { en: "Tell me where your platform hurts.", es: "Cuéntame dónde te duele la plataforma." },
+        "contact.text": { en: "A 30-minute conversation is usually enough to know whether the right first move is a quick scan, a full assessment or a migration plan — and to agree scope and timing.", es: "Con 30 minutos normalmente basta para saber si el primer paso es un quick scan, un assessment completo o un plan de migración — y acordar alcance y tiempos." },
+        "contact.cta": { en: "Message me on LinkedIn", es: "Escríbeme por LinkedIn" },
         "contact.cta2": { en: "GitHub", es: "GitHub" },
-        "footer.text": { en: "© {{year}} Rodrigo Quintanilla · Azure Solutions Architect Expert · Santiago, Chile", es: "© {{year}} Rodrigo Quintanilla · Azure Solutions Architect Expert · Santiago, Chile" }
+        "footer.text": { en: "© {{year}} Rodrigo Quintanilla · Azure Solutions Architect Expert · Santiago, Chile", es: "© {{year}} Rodrigo Quintanilla · Azure Solutions Architect Expert · Santiago, Chile" },
+        "services.quickwins": { en: "Quick wins", es: "Quick wins" }
     },
 
     proof: [
@@ -94,103 +79,69 @@ const portfolioConfig = {
         { value: "3", key: "proof.apps" }
     ],
 
-    // Catálogo de paquetes. size: "lg" = celda grande del bento; badge: "start" | "popular".
-    // price: null => "Precio a solicitud"; price: { from: 2500 } => "Desde USD 2.500".
+    // Servicios: nombre · descripción · quick wins (lo que el cliente obtiene en las primeras semanas)
     services: [
         {
-            id: "quick-scan", num: "01", badge: "start",
-            title: { en: "Fabric Quick Scan", es: "Fabric Quick Scan" },
-            promise: { en: "A snapshot of your Power BI / Fabric estate in five business days.", es: "Una foto de tu ambiente Power BI / Fabric en cinco días hábiles." },
-            description: { en: "Capacities, workspaces, access and failing refreshes, collected read-only and summarized for leadership. The fastest way to know where you stand.", es: "Capacidades, workspaces, accesos y refrescos fallidos, recolectados en solo lectura y resumidos para dirección. La forma más rápida de saber cómo estás." },
-            includes: [
-                { en: "Inventory of capacities, workspaces and items", es: "Inventario de capacidades, workspaces e ítems" },
-                { en: "Access & failing-refresh overview", es: "Panorama de accesos y refrescos fallidos" },
-                { en: "10-page executive summary + 1-hour readout", es: "Resumen ejecutivo de 10 páginas + 1 hora de lectura" }
-            ],
-            ideal: { en: "you need a first, credible picture before anything else.", es: "necesitas una primera foto creíble antes de cualquier otra cosa." },
-            duration: { en: "5 business days", es: "5 días hábiles" },
-            format: { en: "Remote · read-only", es: "Remoto · solo lectura" },
-            price: null
+            num: "01",
+            title: { en: "Fabric & Power BI current-state assessment", es: "Assessment de estado actual en Fabric y Power BI" },
+            description: { en: "A read-only radiography of your estate — capacities, workspaces, who has access to what, what is failing and what it costs — ranked by business impact and written for leadership.", es: "Una radiografía de solo lectura de tu ambiente — capacidades, workspaces, quién accede a qué, qué falla y cuánto cuesta — priorizada por impacto de negocio y escrita para dirección." },
+            quickwins: [
+                { en: "A single, trusted inventory of everything you run", es: "Un único inventario confiable de todo lo que operas" },
+                { en: "Broken refreshes and orphaned access surfaced in days", es: "Refrescos rotos y accesos huérfanos detectados en días" },
+                { en: "A 90-day roadmap your team can start on Monday", es: "Un roadmap a 90 días que tu equipo puede empezar el lunes" }
+            ]
         },
         {
-            id: "assessment", num: "02", size: "lg", badge: "popular",
-            title: { en: "Fabric & Azure Estate Assessment", es: "Assessment del ambiente Fabric y Azure" },
-            promise: { en: "Know exactly what you have, what it costs and what to fix first.", es: "Sabe exactamente qué tienes, cuánto cuesta y qué arreglar primero." },
-            description: { en: "The full radiography: capacities, workspaces, item-level access, governance gaps, failing refreshes and cost. Every finding ranked by business impact, with a plan your team can execute.", es: "La radiografía completa: capacidades, workspaces, accesos por ítem, brechas de gobierno, refrescos fallidos y costo. Cada hallazgo priorizado por impacto de negocio, con un plan que tu equipo puede ejecutar." },
-            includes: [
-                { en: "Everything in Quick Scan, tenant-wide", es: "Todo lo del Quick Scan, a nivel de tenant" },
-                { en: "Item-level access & governance review", es: "Revisión de accesos por ítem y gobierno" },
-                { en: "Executive report + technical annex", es: "Informe ejecutivo + anexo técnico" },
-                { en: "Prioritized 90-day roadmap", es: "Roadmap priorizado a 90 días" },
-                { en: "2 readout sessions (leadership / engineering)", es: "2 sesiones de lectura (dirección / ingeniería)" }
-            ],
-            ideal: { en: "you inherited a platform, plan a migration or leadership asks “where do we stand?”", es: "heredaste una plataforma, planeas una migración o dirección pregunta «¿cómo estamos?»" },
-            duration: { en: "3 weeks", es: "3 semanas" },
-            format: { en: "Remote · read-only · written scope & consent", es: "Remoto · solo lectura · alcance y consentimiento por escrito" },
-            price: null
+            num: "02",
+            title: { en: "Migration to Microsoft Fabric", es: "Migración a Microsoft Fabric" },
+            description: { en: "Planning, rebalancing and execution of the move from Power BI Premium to Fabric capacities, with before/after evidence that proves nothing but the capacity changed.", es: "Planificación, rebalanceo y ejecución del paso de Power BI Premium a capacidades Fabric, con evidencia antes/después que demuestra que solo cambió la capacidad." },
+            quickwins: [
+                { en: "Clear capacity plan before the first workspace moves", es: "Plan de capacidades claro antes de mover el primer workspace" },
+                { en: "Zero surprises on content, permissions or schedules", es: "Cero sorpresas en contenido, permisos o programaciones" },
+                { en: "Sign-off report your stakeholders can audit", es: "Informe de cierre que tus stakeholders pueden auditar" }
+            ]
         },
         {
-            id: "migration", num: "03",
-            title: { en: "Premium → Fabric Migration Pack", es: "Paquete de migración Premium → Fabric" },
-            promise: { en: "Move to Fabric with before/after proof.", es: "Múdate a Fabric con evidencia antes/después." },
-            description: { en: "Plan, rebalance, execute and verify the move from Power BI Premium to Fabric capacities, with an evidence trail that proves nothing but the capacity changed.", es: "Planificar, rebalancear, ejecutar y verificar el paso de Power BI Premium a capacidades Fabric, con evidencia que demuestra que solo cambió la capacidad." },
-            includes: [
-                { en: "Migration & rebalancing plan", es: "Plan de migración y rebalanceo" },
-                { en: "Pre-migration snapshot", es: "Snapshot previo a la migración" },
-                { en: "Post-migration verification report", es: "Informe de verificación posterior" }
-            ],
-            ideal: { en: "your Premium capacities are ending or you consolidate regions.", es: "tus capacidades Premium terminan o consolidas regiones." },
-            duration: { en: "3–6 weeks", es: "3–6 semanas" },
-            format: { en: "Remote · execution with your admin", es: "Remoto · ejecución junto a tu admin" },
-            price: null
+            num: "03",
+            title: { en: "Capacity sizing & FinOps", es: "Dimensionamiento de capacidad y FinOps" },
+            description: { en: "Real consumption telemetry turned into a quantified verdict — keep, grow or optimize — before you commit to a renewal or upgrade.", es: "Telemetría de consumo real convertida en un veredicto cuantificado — mantener, crecer u optimizar — antes de comprometer una renovación o upgrade." },
+            quickwins: [
+                { en: "Know within two weeks if you are over- or under-provisioned", es: "Saber en dos semanas si estás sobre o subdimensionado" },
+                { en: "Top consumers identified and prioritized for refactor", es: "Principales consumidores identificados y priorizados para refactor" },
+                { en: "A number you can take to procurement", es: "Una cifra que puedes llevar a compras" }
+            ]
         },
         {
-            id: "finops", num: "04",
-            title: { en: "Capacity & FinOps Review", es: "Revisión de capacidad y FinOps" },
-            promise: { en: "Keep, grow or optimize — decided with real consumption data.", es: "Mantener, crecer u optimizar — decidido con consumo real." },
-            description: { en: "Two weeks of capacity telemetry turned into a quantified sizing verdict and an optimization backlog, before you commit to a renewal or upgrade.", es: "Dos semanas de telemetría de capacidad convertidas en un veredicto de dimensionamiento cuantificado y un backlog de optimización, antes de comprometer una renovación o upgrade." },
-            includes: [
-                { en: "Consumption & throttling analysis", es: "Análisis de consumo y throttling" },
-                { en: "Top consumers and refactor candidates", es: "Principales consumidores y candidatos a refactor" },
-                { en: "Sizing verdict with evidence", es: "Veredicto de dimensionamiento con evidencia" }
-            ],
-            ideal: { en: "a renewal, upgrade or budget cut is on the table.", es: "hay una renovación, upgrade o recorte de presupuesto sobre la mesa." },
-            duration: { en: "2 weeks", es: "2 semanas" },
-            format: { en: "Remote · read-only", es: "Remoto · solo lectura" },
-            price: null
+            num: "04",
+            title: { en: "Azure architecture & landing zones", es: "Arquitectura Azure y landing zones" },
+            description: { en: "Cloud Adoption and Well-Architected frameworks applied to your reality: identity, network, security and cost guardrails that pass audit, delivered as architecture and infrastructure as code.", es: "Cloud Adoption y Well-Architected Framework aplicados a tu realidad: identidad, red, seguridad y controles de costo que pasan auditoría, entregados como arquitectura e infraestructura como código." },
+            quickwins: [
+                { en: "Architecture decisions documented and defensible", es: "Decisiones de arquitectura documentadas y defendibles" },
+                { en: "Guardrails that stop cost and security drift early", es: "Controles que frenan la deriva de costo y seguridad a tiempo" },
+                { en: "An IaC baseline your team can extend", es: "Una base IaC que tu equipo puede extender" }
+            ]
         },
         {
-            id: "architecture", num: "05",
-            title: { en: "Azure Foundations Blueprint", es: "Blueprint de fundaciones Azure" },
-            promise: { en: "A regulated-grade landing zone, designed once.", es: "Una landing zone de grado regulado, diseñada una sola vez." },
-            description: { en: "Cloud Adoption and Well-Architected frameworks applied to your reality: identity, network, security and cost guardrails that pass audit, delivered as architecture and IaC baseline.", es: "Cloud Adoption y Well-Architected Framework aplicados a tu realidad: identidad, red, seguridad y controles de costo que pasan auditoría, entregados como arquitectura y base IaC." },
-            includes: [
-                { en: "Target architecture & decision log", es: "Arquitectura objetivo y registro de decisiones" },
-                { en: "IaC baseline (Bicep/Terraform)", es: "Base IaC (Bicep/Terraform)" },
-                { en: "Governance & security controls", es: "Controles de gobierno y seguridad" }
-            ],
-            ideal: { en: "you start on Azure or fix an environment that grew without design.", es: "empiezas en Azure o corriges un ambiente que creció sin diseño." },
-            duration: { en: "4–8 weeks", es: "4–8 semanas" },
-            format: { en: "Remote · workshops with your team", es: "Remoto · talleres con tu equipo" },
-            price: null
+            num: "05",
+            title: { en: "Data platform & governed reporting", es: "Plataforma de datos y reportería gobernada" },
+            description: { en: "Lakehouse and medallion design on Fabric, a Gold layer your Power BI can trust, and reporting platforms deployed reproducibly with CI/CD.", es: "Diseño lakehouse y medallón en Fabric, una capa Gold en la que tu Power BI confía y plataformas de reportería desplegadas de forma reproducible con CI/CD." },
+            quickwins: [
+                { en: "One source of truth instead of one per team", es: "Una fuente de verdad en vez de una por equipo" },
+                { en: "Reports that stop breaking when data changes", es: "Reportes que dejan de romperse cuando cambian los datos" },
+                { en: "Deployments you can repeat, not redo", es: "Despliegues que se repiten, no se rehacen" }
+            ]
         },
         {
-            id: "advisory", num: "06",
-            title: { en: "Fractional Architect", es: "Arquitecto fraccional" },
-            promise: { en: "Senior judgment, a few hours a week.", es: "Criterio senior, unas horas a la semana." },
-            description: { en: "Ongoing architecture reviews, standards and mentoring so your team ships with confidence — without a full-time hire.", es: "Revisiones de arquitectura, estándares y mentoría continuas para que tu equipo entregue con confianza — sin una contratación full-time." },
-            includes: [
-                { en: "Monthly review & decision log", es: "Revisión mensual y registro de decisiones" },
-                { en: "Standards & playbooks", es: "Estándares y playbooks" },
-                { en: "Async access for questions", es: "Canal asíncrono para consultas" }
-            ],
-            ideal: { en: "you need a second opinion you can trust, every month.", es: "necesitas una segunda opinión confiable, cada mes." },
-            duration: { en: "Monthly retainer", es: "Retainer mensual" },
-            format: { en: "Remote · 4–8 h / week", es: "Remoto · 4–8 h / semana" },
-            price: null
+            num: "06",
+            title: { en: "Fractional architect & team enablement", es: "Arquitecto fraccional y habilitación de equipos" },
+            description: { en: "Ongoing architecture reviews, standards and mentoring a few hours a week, so your team ships with confidence without a full-time hire.", es: "Revisiones de arquitectura, estándares y mentoría continuas unas horas a la semana, para que tu equipo entregue con confianza sin una contratación full-time." },
+            quickwins: [
+                { en: "A senior second opinion before costly decisions", es: "Una segunda opinión senior antes de decisiones costosas" },
+                { en: "Standards and playbooks the team actually uses", es: "Estándares y playbooks que el equipo realmente usa" },
+                { en: "Fewer escalations, faster reviews", es: "Menos escalamientos, revisiones más rápidas" }
+            ]
         }
     ],
-
 
     approach: [
         { num: "01", title: { en: "Scope & consent", es: "Alcance y consentimiento" }, text: { en: "We agree in writing what is in scope and which minimal read-only access I get. Nothing starts before that.", es: "Acordamos por escrito el alcance y el acceso mínimo de solo lectura. Nada empieza antes." } },

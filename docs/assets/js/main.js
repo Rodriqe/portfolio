@@ -80,46 +80,24 @@ function renderProof() {
         <li><span class="proof-value">${p.value}</span><span class="proof-label">${str(p.key)}</span></li>`).join('');
 }
 
-function formatPrice(p) {
-    const cfg = portfolioConfig.pricing || {};
-    if (!cfg.show || !p || p.from == null) return `<span class="price-quote">${str('services.price.quote')}</span>`;
-    const n = p.from.toLocaleString(currentLang === 'es' ? 'es-CL' : 'en-US');
-    return `<span class="price-from">${str('services.price.from')}</span> <span class="price-value">${cfg.currency} ${n}</span>`;
-}
-
 function renderServices() {
     const grid = document.getElementById('servicesGrid');
     if (!grid) return;
     grid.innerHTML = '';
     portfolioConfig.services.forEach((s, i) => {
-        const card = el('article', `bezel service${s.size === 'lg' ? ' service--lg' : ''}${s.badge ? ' service--' + s.badge : ''}`);
+        const card = el('article', 'bezel service');
         card.dataset.reveal = '';
         card.style.setProperty('--delay', `${i * 70}ms`);
-        const badge = s.badge ? `<span class="service-badge">${str(s.badge === 'popular' ? 'services.popular' : 'services.start')}</span>` : '';
         card.innerHTML = `
             <div class="bezel-core">
-                <div class="service-head">
-                    <span class="service-num">${s.num}</span>
-                    ${badge}
-                </div>
+                <span class="service-num">${s.num}</span>
                 <h3>${t(s.title)}</h3>
-                <p class="service-promise">${t(s.promise)}</p>
                 <p class="service-desc">${t(s.description)}</p>
-                <div class="service-meta">
-                    <div>
-                        <span class="meta-label">${str('services.includes')}</span>
-                        <ul class="meta-list">${s.includes.map(d => `<li>${t(d)}</li>`).join('')}</ul>
-                    </div>
-                    <div class="service-facts">
-                        <div><span class="meta-label">${str('services.duration')}</span><p class="meta-text">${t(s.duration)}</p></div>
-                        <div><span class="meta-label">${str('services.format')}</span><p class="meta-text">${t(s.format)}</p></div>
-                        <div><span class="meta-label">${str('services.ideal')}</span><p class="meta-text">${t(s.ideal)}</p></div>
-                    </div>
+                <div class="service-wins">
+                    <span class="meta-label">${str('services.quickwins')}</span>
+                    <ul class="meta-list">${s.quickwins.map(w => `<li>${t(w)}</li>`).join('')}</ul>
                 </div>
-                <div class="service-foot">
-                    <div class="service-price">${formatPrice(s.price)}</div>
-                    <a class="btn btn-primary btn-sm-card" href="${portfolioConfig.links.order}" target="_blank" rel="noopener noreferrer" aria-label="${str('services.cta')} — ${t(s.title)}"><span>${str('services.cta')}</span>${arrow()}</a>
-                </div>
+                <a class="service-link" href="${portfolioConfig.links.order}" target="_blank" rel="noopener noreferrer" aria-label="${str('services.cta')} — ${t(s.title)}">${str('services.cta')} <span aria-hidden="true">↗</span></a>
             </div>`;
         grid.appendChild(card);
     });
