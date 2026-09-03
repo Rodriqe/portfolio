@@ -86,6 +86,7 @@ docs/                 # sitio publicado
   assets/fonts/       # woff2 (Cormorant Garamond, Manrope; subset latin)
   assets/img/         # og-preview.jpg, favicon.svg, apple-touch-icon.png, certs/, apps/
   assets/js/          # config.js (única fuente de contenido) + main.js
+tools/og-source.html  # plantilla de la imagen OG (Chrome headless a 1200×630 → docs/assets/img/og-preview.jpg)
 skills/               # skills de diseño usadas para el rediseño (no se publican)
 ```
 
