@@ -64,17 +64,23 @@
     </script>
 </head>
 <body>
-    <a href="#services" class="skip-link">Skip to main content</a>
+    <a href="#work" class="skip-link" data-i18n="skip">Skip to main content</a>
     <!-- Navigation -->
     <header>
         <div class="container">
             <nav aria-label="Main navigation">
                 <a href="#" class="logo">Rodrigo Quintanilla</a>
                 <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#tech">Technologies</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#work" data-i18n="nav.work">Work</a></li>
+                    <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                    <li><a href="#tech" data-i18n="nav.tech">Technologies</a></li>
+                    <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                    <li>
+                        <button type="button" class="lang-toggle" id="langToggle" aria-label="Cambiar a español">
+                            <span data-lang="en" class="active">EN</span><span class="lang-sep" aria-hidden="true">|</span><span data-lang="es">ES</span>
+                        </button>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -84,54 +90,49 @@
     <section class="hero">
         <div class="container hero-grid">
             <div class="hero-content fade-in">
-                <p class="hero-eyebrow">Rodrigo Quintanilla</p>
+                <p class="hero-eyebrow" data-i18n="hero.eyebrow">Rodrigo Quintanilla</p>
                 <h1>
-                    <span class="highlight">Azure Cloud</span> Solutions Architect
+                    <span class="highlight" data-i18n="hero.h1.highlight">Azure Cloud</span> <span data-i18n="hero.h1.rest">Solutions Architect</span>
                 </h1>
-                <p class="hero-description">
-                    Azure Solutions Architect Expert and iOS developer holding <span id="certCount">seven</span> Microsoft certifications. For over five years I have designed and implemented enterprise data platforms, Microsoft Fabric and FinOps strategies for leading organizations in banking, retail, insurance, government and industry &mdash; backed by expert- and associate-level Azure credentials in architecture, data analytics and administration.
+                <p class="hero-description" data-i18n="hero.description">
+                    I design and run enterprise data platforms on Microsoft Azure and Fabric — migrations, capacity sizing, access governance and FinOps — for banking, retail, insurance and industry. Azure Solutions Architect Expert with seven Microsoft certifications and three apps live on the App Store.
                 </p>
                 <div class="hero-certs" id="heroCerts" aria-label="Microsoft certifications">
                     <!-- Generado por JavaScript desde config.js -->
                 </div>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Request a Consultation</a>
-                    <a href="https://www.linkedin.com/in/rigoqe/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="#contact" class="btn btn-primary" data-i18n="hero.cta.primary">Request a Consultation</a>
+                    <a href="https://www.linkedin.com/in/rigoqe/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="hero.cta.secondary">LinkedIn</a>
                 </div>
                 <div class="stats">
                     <div class="stat">
                         <div class="stat-number">8</div>
-                        <div class="stat-label">Project Areas</div>
-                        <div class="stat-chips">
-                            <span>Data Platforms</span>
-                            <span>Microsoft Fabric</span>
-                            <span>Cloud Architecture</span>
-                            <span>Migrations</span>
-                            <span>FinOps</span>
-                            <span>DevOps</span>
-                            <span>Security</span>
-                            <span>IaC</span>
-                        </div>
+                        <div class="stat-label" data-i18n="stats.areas">Project Areas</div>
+                        <div class="stat-chips" id="areasChips"></div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">8</div>
-                        <div class="stat-label">Client Sectors</div>
-                        <div class="stat-chips">
-                            <span>Banking</span>
-                            <span>Retail</span>
-                            <span>Insurance</span>
-                            <span>Construction</span>
-                            <span>Food &amp; Consumer Goods</span>
-                            <span>Ports &amp; Logistics</span>
-                            <span>Government</span>
-                            <span>Mining</span>
-                        </div>
+                        <div class="stat-label" data-i18n="stats.sectors">Client Sectors</div>
+                        <div class="stat-chips" id="sectorsChips"></div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">5+</div>
-                        <div class="stat-label">Years of Experience</div>
+                        <div class="stat-label" data-i18n="stats.years">Years of Experience</div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected work -->
+    <section class="work" id="work">
+        <div class="container">
+            <span class="section-eyebrow" data-i18n="work.eyebrow">Selected work</span>
+            <h2 class="section-title" data-i18n="work.title">Recent Engagements</h2>
+            <p class="section-subtitle" data-i18n="work.subtitle">Anonymized cases from 2026 — sector, challenge, what I did and the outcome</p>
+
+            <div class="work-grid" id="workGrid">
+                <!-- Generado por JavaScript desde config.js -->
             </div>
         </div>
     </section>
@@ -139,12 +140,12 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <span class="section-eyebrow">What I do</span>
-            <h2 class="section-title">Consulting Services</h2>
-            <p class="section-subtitle">End-to-end cloud architecture and data governance solutions</p>
+            <span class="section-eyebrow" data-i18n="services.eyebrow">What I do</span>
+            <h2 class="section-title" data-i18n="services.title">Consulting Services</h2>
+            <p class="section-subtitle" data-i18n="services.subtitle">End-to-end cloud architecture and data governance solutions</p>
             
             <div class="services-grid" id="servicesGrid">
-                <!-- Generado por JavaScript desde config.json -->
+                <!-- Generado por JavaScript desde config.js -->
             </div>
         </div>
     </section>
@@ -152,9 +153,9 @@
     <!-- Tech Stack Section -->
     <section class="tech" id="tech">
         <div class="container">
-            <span class="section-eyebrow">Stack &amp; expertise</span>
-            <h2 class="section-title">Technologies &amp; Expertise</h2>
-            <p class="section-subtitle">Stack and areas of specialization across cloud, data and development</p>
+            <span class="section-eyebrow" data-i18n="tech.eyebrow">Stack &amp; expertise</span>
+            <h2 class="section-title" data-i18n="tech.title">Technologies &amp; Expertise</h2>
+            <p class="section-subtitle" data-i18n="tech.subtitle">Stack and areas of specialization across cloud, data and development</p>
 
             <div class="tech-grid" id="techGrid">
                 <!-- Generado por JavaScript desde config.js -->
@@ -165,9 +166,9 @@
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="container">
-            <span class="section-eyebrow">Shipped &amp; live</span>
-            <h2 class="section-title">Personal Projects</h2>
-            <p class="section-subtitle">Only products published on the App Store and available to download</p>
+            <span class="section-eyebrow" data-i18n="projects.eyebrow">Shipped &amp; live</span>
+            <h2 class="section-title" data-i18n="projects.title">Personal Projects</h2>
+            <p class="section-subtitle" data-i18n="projects.subtitle">Only products published on the App Store and available to download</p>
             
             <div class="projects-grid" id="projectsGrid">
                 <!-- Generado por JavaScript desde config.json -->
@@ -179,13 +180,13 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-content fade-in">
-                <h2 class="section-title">Let's Talk</h2>
-                <p>
+                <h2 class="section-title" data-i18n="contact.title">Let's Talk</h2>
+                <p data-i18n="contact.text">
                     Does your organization need cloud architecture, a Microsoft Fabric migration, platform modernization or a FinOps strategy? Reach out on LinkedIn for consulting, projects and team mentoring.
                 </p>
                 <div class="cta-buttons contact-actions">
-                    <a href="https://www.linkedin.com/in/rigoqe/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Message me on LinkedIn</a>
-                    <a href="https://github.com/Rodriqe" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://www.linkedin.com/in/rigoqe/" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="contact.cta.primary">Message me on LinkedIn</a>
+                    <a href="https://github.com/Rodriqe" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="contact.cta.secondary">GitHub</a>
                 </div>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/rigoqe/" class="social-link" title="LinkedIn" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer">in</a>
@@ -198,7 +199,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Rodrigo Quintanilla — Azure Solutions Architect &amp; iOS Developer.</p>
+            <p data-i18n="footer">&copy; 2026 Rodrigo Quintanilla — Azure Solutions Architect &amp; iOS Developer.</p>
         </div>
     </footer>
 
